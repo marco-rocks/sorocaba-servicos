@@ -46,22 +46,43 @@ Os dados utilizados são públicos e foram tratados e estruturados especificamen
 ```text
 sorocaba-servicos/
 │
-├── data/
-│   ├── raw/                    # Dados brutos das fontes oficiais
-│   └── processed/              # Dados tratados e prontos para análise
+├── 📄 README.md
+├── 📄 requirements.txt
+├── 📄 .gitignore
+├── 📄 app.py
 │
-├── notebooks/                  # Análises exploratórias e validação dos dados
+├── 📁 pages/                    # Páginas do dashboard Streamlit
+│   ├── 01_contexto.py
+│   ├── 02_mercado_trabalho.py
+│   ├── 03_empregos_servicos.py
+│   ├── 04_salarios.py
+│   └── 05_mobilidade.py
 │
-├── src/
-│   ├── data_processing.py      # Funções de tratamento e preparação dos dados
-│   └── visualization.py        # Funções para criação das visualizações
+├── 📁 src/                      # Código de processamento e análise
+│   ├── __init__.py
+│   │
+│   ├── 📁 data/                 # Carregamento e preparação dos dados
+│   │   ├── __init__.py
+│   │   └── load.py
+│   │
+│   └── 📁 analysis/             # Funções e cálculos das análises
+│       ├── __init__.py
+│       ├── emprego.py
+│       ├── servicos.py
+│       ├── salarios.py
+│       └── mobilidade.py
 │
-├── app.py                      # Aplicação principal em Streamlit
+├── 📁 data/                     # Bases de dados utilizadas no projeto
+│   ├── raw/                     # Dados brutos
+│   │   └── .gitkeep
+│   │
+│   └── processed/               # Dados tratados
+│       └── .gitkeep
 │
-├── requirements.txt            # Dependências do projeto
-│
-└── README.md                   # Documentação do projeto
+└── 📁 assets/                   # Imagens e recursos visuais
+    └── .gitkeep
 ```
+
 ---
 
 ## 🚀 Como Executar o Projeto
