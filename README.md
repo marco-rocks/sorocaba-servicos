@@ -17,21 +17,6 @@ Investigar a relevância e a participação do **setor de serviços** na economi
 
 ---
 
-## ❓ Perguntas de Análise
-
-O projeto busca responder, por meio dos dados, perguntas como:
-
-1. Qual é a participação do setor de serviços na economia de Sorocaba?
-2. Quais subsetores concentram a maior quantidade de empregos?
-3. Quais são as principais ocupações dentro do setor de serviços?
-4. Como a remuneração varia entre os diferentes subsetores e ocupações?
-5. Quais atividades apresentam maior concentração de trabalhadores?
-6. Como o mercado de trabalho de Sorocaba se compara ao contexto regional?
-7. Sorocaba exerce um papel de concentração de empregos e serviços dentro da RMS?
-8. Como esses indicadores evoluíram ao longo dos anos?
-
----
-
 ## 🛠️ Tecnologias Utilizadas
 
 * **Python** — Linguagem base para processamento e análise dos dados.
@@ -56,40 +41,6 @@ Os dados utilizados são públicos e foram tratados e estruturados especificamen
 
 ---
 
-## 📊 Dashboard
-
-A análise será apresentada por meio de uma aplicação interativa desenvolvida em **Streamlit**, permitindo explorar os principais indicadores do setor de serviços em Sorocaba.
-
-### Principais análises
-
-**Visão geral**
-
-* Participação dos serviços na economia municipal;
-* Número de estabelecimentos;
-* Número de empregos;
-* Indicadores gerais do mercado de trabalho.
-
-**Mercado de trabalho**
-
-* Distribuição dos empregos por subsetor;
-* Principais ocupações;
-* Remuneração média;
-* Perfil dos trabalhadores.
-
-**Análise regional**
-
-* Comparação entre Sorocaba e municípios da RMS;
-* Concentração de empregos e atividades;
-* Participação de Sorocaba no contexto regional.
-
-**Evolução temporal**
-
-* Crescimento ou redução do emprego;
-* Evolução da remuneração;
-* Mudanças na composição do setor de serviços.
-
----
-
 ## 📁 Estrutura do Repositório
 
 ```text
@@ -111,7 +62,6 @@ sorocaba-servicos/
 │
 └── README.md                   # Documentação do projeto
 ```
-
 ---
 
 ## 🚀 Como Executar o Projeto
