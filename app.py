@@ -100,6 +100,9 @@ def renderizar_home():
 p_home = st.Page(renderizar_home, title="Página Inicial", icon="🏠", default=True)
 p_contexto = st.Page("pages/01_contexto.py", title="01 — Contexto Econômico", icon="🏙️")
 p_mercado = st.Page("pages/02_mercado_trabalho.py", title="02 — Mercado de Trabalho", icon="💼")
+p_servicos = st.Page("pages/03_setor_servicos.py", title="03 — Setor de Serviços", icon="🛎️")
+p_salario_ocupacao = st.Page("pages/04_salario_ocupacao.py", title="04 — Salário por Ocupação", icon="💰")
+p_mobilidade = st.Page("pages/05_mobilidade.py", title="05 — Mobilidade Urbana", icon="🚗")
 
 # Navegação na barra lateral
 pg = st.navigation({
@@ -107,6 +110,9 @@ pg = st.navigation({
         p_home,
         p_contexto,
         p_mercado,
+        p_servicos,
+        p_salario_ocupacao,
+        p_mobilidade
     ]
 })
 

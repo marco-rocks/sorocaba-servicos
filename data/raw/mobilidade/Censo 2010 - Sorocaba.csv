@@ -1,0 +1,108 @@
+Nivel;Amostra_Deslocamento;qtd;medida
+4.1;Pessoas de 10 anos ou mais de idade, ocupadas na semana de referência;;
+4.1.1;Local de exercício do trabalho principal;;
+4.1.1.1;Mais de um município ou país;2314;pessoas
+4.1.1.1.1;Seção de atividade;;
+4.1.1.1.1.1;Administração pública, defesa e seguridade social;;pessoas
+4.1.1.1.1.2;Agricultura, pecuária, produção florestal, pesca e aquicultura;51;pessoas
+4.1.1.1.1.3;Água, esgoto, atividades de gestão de resíduos e descontaminação;;pessoas
+4.1.1.1.1.4;Alojamento e alimentação;22;pessoas
+4.1.1.1.1.5;Artes, cultura, esporte e recreação;89;pessoas
+4.1.1.1.1.6;Atividades administrativas e serviços complementares;137;pessoas
+4.1.1.1.1.7;Atividades financeiras, de seguros e serviços relacionados;;pessoas
+4.1.1.1.1.8;Atividades imobiliárias;36;pessoas
+4.1.1.1.1.9;Atividades mal especificadas;129;pessoas
+4.1.1.1.1.10;Atividades profissionais, científicas e técnicas;126;pessoas
+4.1.1.1.1.11;Comércio, reparação de veículos automotores e motocicletas;468;pessoas
+4.1.1.1.1.12;Construção;169;pessoas
+4.1.1.1.1.13;Educação;148;pessoas
+4.1.1.1.1.14;Eletricidade e gás;23;pessoas
+4.1.1.1.1.15;Indústrias de transformação;276;pessoas
+4.1.1.1.1.16;Indústrias extrativas;41;pessoas
+4.1.1.1.1.17;Informação e comunicação;46;pessoas
+4.1.1.1.1.18;Organismos internacionais e outras instituições extraterritoriais;;pessoas
+4.1.1.1.1.19;Saúde humana e serviços sociais;157;pessoas
+4.1.1.1.1.20;Serviços domésticos;28;pessoas
+4.1.1.1.1.21;Transporte, armazenagem e correio;351;pessoas
+4.1.1.1.1.22;Outras atividades de serviços;15;pessoas
+4.1.1.2;Outro município;19538;pessoas
+4.1.1.2.1;Seção de atividade;;
+4.1.1.2.1.1;Administração pública, defesa e seguridade social;1678;pessoas
+4.1.1.2.1.2;Agricultura, pecuária, produção florestal, pesca e aquicultura;310;pessoas
+4.1.1.2.1.3;Água, esgoto, atividades de gestão de resíduos e descontaminação;141;pessoas
+4.1.1.2.1.4;Alojamento e alimentação;399;pessoas
+4.1.1.2.1.5;Artes, cultura, esporte e recreação;111;pessoas
+4.1.1.2.1.6;Atividades administrativas e serviços complementares;723;pessoas
+4.1.1.2.1.7;Atividades financeiras, de seguros e serviços relacionados;749;pessoas
+4.1.1.2.1.8;Atividades imobiliárias;85;pessoas
+4.1.1.2.1.9;Atividades mal especificadas;1310;pessoas
+4.1.1.2.1.10;Atividades profissionais, científicas e técnicas;842;pessoas
+4.1.1.2.1.11;Comércio, reparação de veículos automotores e motocicletas;1713;pessoas
+4.1.1.2.1.12;Construção;1207;pessoas
+4.1.1.2.1.13;Educação;1501;pessoas
+4.1.1.2.1.14;Eletricidade e gás;67;pessoas
+4.1.1.2.1.15;Indústrias de transformação;5081;pessoas
+4.1.1.2.1.16;Indústrias extrativas;158;pessoas
+4.1.1.2.1.17;Informação e comunicação;900;pessoas
+4.1.1.2.1.18;Organismos internacionais e outras instituições extraterritoriais;17;pessoas
+4.1.1.2.1.19;Saúde humana e serviços sociais;1105;pessoas
+4.1.1.2.1.20;Serviços domésticos;271;pessoas
+4.1.1.2.1.21;Transporte, armazenagem e correio;1012;pessoas
+4.1.1.2.1.22;Outras atividades de serviços;159;pessoas
+4.1.1.3;País estrangeiro;32;pessoas
+4.1.1.3.1;Seção de atividade;;
+4.1.1.3.1.1;Administração pública, defesa e seguridade social;;pessoas
+4.1.1.3.1.2;Agricultura, pecuária, produção florestal, pesca e aquicultura;;pessoas
+4.1.1.3.1.3;Água, esgoto, atividades de gestão de resíduos e descontaminação;;pessoas
+4.1.1.3.1.4;Alojamento e alimentação;;pessoas
+4.1.1.3.1.5;Artes, cultura, esporte e recreação;;pessoas
+4.1.1.3.1.6;Atividades administrativas e serviços complementares;;pessoas
+4.1.1.3.1.7;Atividades financeiras, de seguros e serviços relacionados;;pessoas
+4.1.1.3.1.8;Atividades imobiliárias;;pessoas
+4.1.1.3.1.9;Atividades mal especificadas;;pessoas
+4.1.1.3.1.10;Atividades profissionais, científicas e técnicas;;pessoas
+4.1.1.3.1.11;Comércio, reparação de veículos automotores e motocicletas;;pessoas
+4.1.1.3.1.12;Construção;;pessoas
+4.1.1.3.1.13;Educação;13;pessoas
+4.1.1.3.1.14;Eletricidade e gás;;pessoas
+4.1.1.3.1.15;Indústrias de transformação;;pessoas
+4.1.1.3.1.16;Indústrias extrativas;;pessoas
+4.1.1.3.1.17;Informação e comunicação;;pessoas
+4.1.1.3.1.18;Organismos internacionais e outras instituições extraterritoriais;;pessoas
+4.1.1.3.1.19;Saúde humana e serviços sociais;19;pessoas
+4.1.1.3.1.20;Serviços domésticos;;pessoas
+4.1.1.3.1.21;Transporte, armazenagem e correio;;pessoas
+4.1.1.3.1.22;Outras atividades de serviços;;pessoas
+4.1.1.4;Município de residência;257278;pessoas
+4.1.1.4.1;Seção de atividade;;
+4.1.1.4.1.1;Administração pública, defesa e seguridade social;7604;pessoas
+4.1.1.4.1.2;Agricultura, pecuária, produção florestal, pesca e aquicultura;1899;pessoas
+4.1.1.4.1.3;Água, esgoto, atividades de gestão de resíduos e descontaminação;2076;pessoas
+4.1.1.4.1.4;Alojamento e alimentação;11065;pessoas
+4.1.1.4.1.5;Artes, cultura, esporte e recreação;1886;pessoas
+4.1.1.4.1.6;Atividades administrativas e serviços complementares;11741;pessoas
+4.1.1.4.1.7;Atividades financeiras, de seguros e serviços relacionados;4121;pessoas
+4.1.1.4.1.8;Atividades imobiliárias;1965;pessoas
+4.1.1.4.1.9;Atividades mal especificadas;17343;pessoas
+4.1.1.4.1.10;Atividades profissionais, científicas e técnicas;8244;pessoas
+4.1.1.4.1.11;Comércio, reparação de veículos automotores e motocicletas;46899;pessoas
+4.1.1.4.1.12;Construção;22373;pessoas
+4.1.1.4.1.13;Educação;14675;pessoas
+4.1.1.4.1.14;Eletricidade e gás;686;pessoas
+4.1.1.4.1.15;Indústrias de transformação;54504;pessoas
+4.1.1.4.1.16;Indústrias extrativas;184;pessoas
+4.1.1.4.1.17;Informação e comunicação;3777;pessoas
+4.1.1.4.1.18;Organismos internacionais e outras instituições extraterritoriais;;pessoas
+4.1.1.4.1.19;Saúde humana e serviços sociais;11111;pessoas
+4.1.1.4.1.20;Serviços domésticos;16608;pessoas
+4.1.1.4.1.21;Transporte, armazenagem e correio;10094;pessoas
+4.1.1.4.1.22;Outras atividades de serviços;8424;pessoas
+4.2;Pessoas que frequentavam escola ou creche;170965;pessoas
+4.2.1;Local de escola;;
+4.2.1.1;Município de residência;162310;pessoas
+4.2.1.2;Outro município;8609;pessoas
+4.2.1.3;País estrangeiro;46;pessoas
+;;;
+;;;
+;;;
+Fonte: IBGE, Censo Demográfico 2010;;;
