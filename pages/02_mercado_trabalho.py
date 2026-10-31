@@ -14,6 +14,8 @@ st.set_page_config(
 BASE_DIR = Path(__file__).resolve().parents[1]
 PROCESSED_DIR = BASE_DIR / "data" / "processed"
 
+ANO_MAX = 2025  # teto da série histórica (padronização entre as telas)
+
 st.title("💼 Estrutura do Mercado de Trabalho Formal")
 st.markdown("Análise da evolução temporal do número de empresas, postos de trabalho e massa salarial em Sorocaba (Fonte: CEMPRE/IBGE).")
 
@@ -31,6 +33,7 @@ try:
         st.error("⚠️ O ficheiro `empresas_empregos_limpo.csv` não foi encontrado em `data/processed/`. Por favor, execute primeiro o script `python src/tratamento.py`.")
     else:
         # Ordenar a série histórica por ano
+        df_emp = df_emp[df_emp["Ano"] <= ANO_MAX]
         df_emp = df_emp.sort_values("Ano").reset_index(drop=True)
 
         ult_linha = df_emp.iloc[-1]
@@ -134,6 +137,74 @@ try:
                 height=400
             )
             st.plotly_chart(fig_sal, use_container_width=True)
+
+        # --- ANÁLISE: CRESCIMENTO TOTAL DE EMPRESAS ---
+        st.markdown("---")
+        st.header("🔍 Análise: Crescimento Total de Empresas")
+
+        df_an = df_emp[["Ano", "Empresas", "Pessoal Ocupado"]].copy()
+        df_an["Var. Empresas (%)"] = df_an["Empresas"].pct_change() * 100
+        df_an["Var. Pessoal Ocupado (%)"] = df_an["Pessoal Ocupado"].pct_change() * 100
+        df_an["Saldo de Empresas"] = df_an["Empresas"].diff()
+        df_an["Pessoas por Empresa"] = df_an["Pessoal Ocupado"] / df_an["Empresas"]
+
+        n_anos = ano_ult - ano_pri
+        cagr_emp = ((ult_linha["Empresas"] / pri_linha["Empresas"]) ** (1 / n_anos) - 1) * 100
+        cagr_pes = ((ult_linha["Pessoal Ocupado"] / pri_linha["Pessoal Ocupado"]) ** (1 / n_anos) - 1) * 100
+
+        a1, a2, a3 = st.columns(3)
+        a1.metric("Crescimento médio anual (empresas)", f"{cagr_emp:.2f}% a.a.")
+        a2.metric("Crescimento médio anual (pessoal ocupado)", f"{cagr_pes:.2f}% a.a.")
+        a3.metric("Saldo líquido de empresas no período", f"{int(ult_linha['Empresas'] - pri_linha['Empresas']):,}".replace(",", "."))
+
+        df_var = df_an.dropna(subset=["Var. Empresas (%)"])
+
+        c_l, c_r = st.columns(2)
+        with c_l:
+            fig_var = px.bar(
+                df_var, x="Ano", y="Var. Empresas (%)", text="Var. Empresas (%)",
+                title="Variação Anual do Número de Empresas (%)",
+                color="Var. Empresas (%)", color_continuous_scale="RdYlGn"
+            )
+            fig_var.update_traces(texttemplate="%{text:.1f}%", textposition="outside")
+            fig_var.update_layout(xaxis=dict(dtick=1, tickmode="linear"), height=400, coloraxis_showscale=False)
+            st.plotly_chart(fig_var, use_container_width=True)
+
+        with c_r:
+            df_cmp = df_var.melt(
+                id_vars=["Ano"], value_vars=["Var. Empresas (%)", "Var. Pessoal Ocupado (%)"],
+                var_name="Indicador", value_name="Variação (%)"
+            )
+            fig_cmp = px.line(
+                df_cmp, x="Ano", y="Variação (%)", color="Indicador", markers=True,
+                title="Empresas vs. Pessoal Ocupado: variação anual (%)"
+            )
+            fig_cmp.update_layout(xaxis=dict(dtick=1, tickmode="linear"), height=400, hovermode="x unified")
+            st.plotly_chart(fig_cmp, use_container_width=True)
+
+        fig_pxe = px.line(
+            df_an, x="Ano", y="Pessoas por Empresa", markers=True,
+            title="Porte médio: pessoas ocupadas por empresa formal"
+        )
+        fig_pxe.update_layout(xaxis=dict(dtick=1, tickmode="linear"), height=380)
+        st.plotly_chart(fig_pxe, use_container_width=True)
+
+        # Texto analítico calculado a partir dos dados (não fixo)
+        melhor = df_var.loc[df_var["Var. Empresas (%)"].idxmax()]
+        pior = df_var.loc[df_var["Var. Empresas (%)"].idxmin()]
+        anos_queda = df_var[df_var["Var. Empresas (%)"] < 0]["Ano"].astype(int).tolist()
+        ppe_ini = df_an.iloc[0]["Pessoas por Empresa"]
+        ppe_fim = df_an.iloc[-1]["Pessoas por Empresa"]
+        sentido = "diminuiu" if ppe_fim < ppe_ini else "aumentou"
+        quedas = ", ".join(map(str, anos_queda)) if anos_queda else "nenhum ano"
+
+        st.markdown(f"""
+**📌 Leitura dos gráficos**
+- **Ritmo:** entre {ano_pri} e {ano_ult}, o número de empresas cresceu em média **{cagr_emp:.2f}% ao ano**, contra **{cagr_pes:.2f}% ao ano** do pessoal ocupado.
+- **Melhor ano:** {int(melhor['Ano'])} (**{melhor['Var. Empresas (%)']:+.1f}%**). **Pior ano:** {int(pior['Ano'])} (**{pior['Var. Empresas (%)']:+.1f}%**).
+- **Anos de queda no nº de empresas:** {quedas}.
+- **Porte médio:** o número de pessoas por empresa {sentido}, de **{ppe_ini:.1f}** para **{ppe_fim:.1f}**. {"Isso indica que a base empresarial cresceu mais rápido que o emprego, com empresas menores." if sentido == "diminuiu" else "Isso indica que o emprego cresceu mais rápido que o número de empresas."}
+        """)
 
         # --- PAINEL DE SÍNTESE ---
         st.info("""

@@ -16,6 +16,8 @@ st.set_page_config(
 BASE_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BASE_DIR / "data" / "processed"
 
+ANO_MAX = 2025  # teto da série histórica (padronização entre as telas)
+
 st.title("💼 Salários e Ocupações")
 st.markdown(
     """
@@ -48,6 +50,7 @@ def carregar_dados():
     )
 
     df["ano"] = df["ano"].astype(int)
+    df = df[df["ano"] <= ANO_MAX]
 
     return df
 
@@ -569,6 +572,75 @@ try:
     st.plotly_chart(fig_val, use_container_width=True)
 
     st.caption("Fonte dos dados: CBO")
+
+    # ==========================================================
+    # RANKING GERAL DE OCUPAÇÕES
+    # ==========================================================
+
+    st.markdown("---")
+
+    st.subheader("🏅 Ranking Geral de Ocupações")
+
+    rk = df_ano.copy()
+    rk["massa_salarial"] = rk["trabalhadores"] * rk["salario_medio"]
+
+    rk["Pos. Trabalhadores"] = rk["trabalhadores"].rank(ascending=False, method="min").astype(int)
+    rk["Pos. Massa Salarial"] = rk["massa_salarial"].rank(ascending=False, method="min").astype(int)
+
+    # Ranking salarial só entre ocupações com base mínima (evita distorção de poucos casos)
+    elegiveis = rk["trabalhadores"] >= 30
+    rk["Pos. Salário"] = pd.NA
+    rk.loc[elegiveis, "Pos. Salário"] = (
+        rk.loc[elegiveis, "salario_medio"].rank(ascending=False, method="min").astype(int)
+    )
+    rk["Pos. Salário"] = rk["Pos. Salário"].astype("Int64")
+
+    # Variação de posição (ano inicial -> ano final), por nº de trabalhadores
+    r_ini = df[df["ano"] == ano_inicial][["ocupacao", "trabalhadores"]].copy()
+    r_fim = df[df["ano"] == ano_final][["ocupacao", "trabalhadores"]].copy()
+    r_ini["pos_ini"] = r_ini["trabalhadores"].rank(ascending=False, method="min")
+    r_fim["pos_fim"] = r_fim["trabalhadores"].rank(ascending=False, method="min")
+    var_pos = r_ini[["ocupacao", "pos_ini"]].merge(r_fim[["ocupacao", "pos_fim"]], on="ocupacao")
+    var_pos["Var. Posição"] = (var_pos["pos_ini"] - var_pos["pos_fim"]).astype(int)  # positivo = subiu
+    rk = rk.merge(var_pos[["ocupacao", "Var. Posição"]], on="ocupacao", how="left")
+
+    ordem = st.radio(
+        "Ordenar ranking por",
+        ["Trabalhadores", "Salário Médio", "Massa Salarial"],
+        horizontal=True
+    )
+    campo = {"Trabalhadores": "trabalhadores", "Salário Médio": "salario_medio", "Massa Salarial": "massa_salarial"}[ordem]
+
+    busca = st.text_input("🔎 Buscar ocupação")
+    rk_view = rk.sort_values(campo, ascending=False).reset_index(drop=True)
+    if busca:
+        rk_view = rk_view[rk_view["ocupacao"].str.contains(busca, case=False, na=False)]
+
+    tabela = rk_view[[
+        "ocupacao", "codigo_cbo", "trabalhadores", "salario_medio", "massa_salarial",
+        "Pos. Trabalhadores", "Pos. Salário", "Pos. Massa Salarial", "Var. Posição"
+    ]].rename(columns={
+        "ocupacao": "Ocupação", "codigo_cbo": "CBO", "trabalhadores": "Trabalhadores",
+        "salario_medio": "Salário Médio", "massa_salarial": "Massa Salarial"
+    })
+
+    st.dataframe(
+        tabela,
+        use_container_width=True,
+        hide_index=True,
+        column_config={
+            "Trabalhadores": st.column_config.NumberColumn(format="%d"),
+            "Salário Médio": st.column_config.NumberColumn(format="R$ %.2f"),
+            "Massa Salarial": st.column_config.NumberColumn(format="R$ %.0f"),
+            "Var. Posição": st.column_config.NumberColumn(
+                format="%+d", help=f"Posições ganhas (+) ou perdidas (-) em nº de trabalhadores, {ano_inicial}→{ano_final}"
+            ),
+        }
+    )
+    st.caption(
+        "Posição salarial considera apenas ocupações com 30+ trabalhadores. "
+        f"Variação de posição compara {ano_inicial} e {ano_final} (só ocupações presentes nos dois anos)."
+    )
 
 except FileNotFoundError:
     st.error(

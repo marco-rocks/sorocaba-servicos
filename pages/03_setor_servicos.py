@@ -1,3 +1,4 @@
+import re
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -15,6 +16,7 @@ DATA_DIR = BASE_DIR / "data" / "processed"
 
 MUNICIPIO = "Sorocaba"
 ANO_INICIO_NEGOCIOS = 2006  # mesma janela inicial da versão anterior da página
+ANO_MAX = 2025  # teto da série histórica (padronização entre as telas)
 
 st.title("🛎️ Estrutura do Setor de Serviços")
 st.markdown("Análise da evolução temporal das empresas e empregos no setor de serviços em Sorocaba (Fonte: base de estabelecimentos e empregados por divisão econômica).")
@@ -37,7 +39,26 @@ def carregar_dados():
     df_novos = df_novos.rename(columns={"ano": "Ano", "qtd_empresa": "Unidades"})
     df_tot = df_tot[df_tot["municipio"] == MUNICIPIO].rename(columns={"ano": "Ano"})
 
+    # --- TETO DE ANO ---
+    df_pess = df_pess[pd.to_numeric(df_pess["ano"], errors="coerce") <= ANO_MAX]
+    df_novos = df_novos[pd.to_numeric(df_novos["Ano"], errors="coerce") <= ANO_MAX]
+    df_tot = df_tot[pd.to_numeric(df_tot["Ano"], errors="coerce") <= ANO_MAX]
+
     return df_unid, df_pess, df_novos, df_tot
+
+@st.cache_data
+def carregar_novos_raw():
+    return pd.read_csv(DATA_DIR / "novos_negocios.csv", sep=";")
+
+def classificar_porte(valor):
+    s = str(valor).lower().strip()
+    if re.search(r"\bmei\b", s) or "microempreendedor" in s:
+        return "MEI"
+    if "microempresa" in s or "micro empresa" in s or s in ("me", "micro"):
+        return "Microempresa"
+    if "pequeno" in s or re.search(r"\bepp\b", s):
+        return "Empresa de Pequeno Porte"
+    return "Demais"
 
 try:
     df_unid, df_pess, df_novos, df_tot = carregar_dados()
@@ -166,6 +187,84 @@ try:
     fig_cresc.update_layout(height=700, font=dict(size=14), xaxis=dict(tickangle=-30))
     st.plotly_chart(fig_cresc, use_container_width=True)
     st.caption("Fonte dos dados: base de empregados por divisão econômica (setor Serviços)")
+
+    # --- COMO CRESCERAM MEI E MICROEMPRESAS ---
+    st.markdown("---")
+    st.header("🌱 Como Cresceram MEI e Microempresas")
+
+    df_raw = carregar_novos_raw()
+    palavras = ("porte", "natureza", "categoria", "enquadramento", "tipo", "regime")
+    cols_cat = [c for c in df_raw.columns if any(p in c.lower() for p in palavras)]
+
+    if not cols_cat:
+        st.warning(
+            "Não encontrei em `novos_negocios.csv` uma coluna de porte/natureza jurídica. "
+            f"Colunas disponíveis: {list(df_raw.columns)}"
+        )
+    else:
+        col_porte = st.selectbox("Coluna usada para classificar o porte", cols_cat)
+
+        df_p = df_raw.copy()
+        df_p["ano"] = pd.to_numeric(df_p["ano"], errors="coerce")
+        df_p["qtd_empresa"] = pd.to_numeric(df_p["qtd_empresa"], errors="coerce")
+        df_p = df_p.dropna(subset=["ano", "qtd_empresa"])
+        df_p = df_p[(df_p["ano"] >= ANO_INICIO_NEGOCIOS) & (df_p["ano"] <= ANO_MAX)]
+        df_p["ano"] = df_p["ano"].astype(int)
+        df_p["Categoria"] = df_p[col_porte].apply(classificar_porte)
+
+        por_cat = df_p.groupby(["ano", "Categoria"], as_index=False)["qtd_empresa"].sum()
+        pivot = por_cat.pivot(index="ano", columns="Categoria", values="qtd_empresa").fillna(0)
+
+        foco = [c for c in ["MEI", "Microempresa"] if c in pivot.columns]
+
+        if not foco:
+            st.warning(
+                f"Nenhum valor da coluna `{col_porte}` foi reconhecido como MEI ou Microempresa. "
+                f"Valores encontrados: {sorted(df_p[col_porte].astype(str).unique())[:20]}"
+            )
+        else:
+            ano_min, ano_max = int(pivot.index.min()), int(pivot.index.max())
+            # com o teto em ANO_MAX, esse ano já é completo; sem teto atingido, o último pode estar incompleto
+            ano_comp = ano_max if ano_max >= ANO_MAX else ano_max - 1
+
+            cols_m = st.columns(len(foco))
+            for i, cat in enumerate(foco):
+                base = pivot.loc[ano_min, cat]
+                atual = pivot.loc[ano_comp, cat]
+                delta = f"{((atual - base) / base) * 100:+.1f}% vs {ano_min}" if base > 0 else f"Sem registros em {ano_min}"
+                cols_m[i].metric(f"{cat}: aberturas em {ano_comp}", f"{int(atual):,}".replace(",", "."), delta=delta)
+
+            df_lin = por_cat[por_cat["Categoria"].isin(foco)]
+            fig_porte = px.line(
+                df_lin, x="ano", y="qtd_empresa", color="Categoria", markers=True,
+                title="Aberturas por ano: MEI e Microempresas",
+                labels={"qtd_empresa": "Qtd. de Empresas", "ano": "Ano"}
+            )
+            fig_porte.update_layout(xaxis=dict(tickmode="linear", dtick=1), height=500, hovermode="x unified")
+            st.plotly_chart(fig_porte, use_container_width=True)
+
+            acum = pivot[foco].cumsum().reset_index().melt(id_vars="ano", var_name="Categoria", value_name="Acumulado")
+            fig_acum = px.area(
+                acum, x="ano", y="Acumulado", color="Categoria",
+                title="Acumulado de aberturas (empresas hoje ativas)",
+                labels={"Acumulado": "Qtd. acumulada", "ano": "Ano"}
+            )
+            fig_acum.update_layout(xaxis=dict(tickmode="linear", dtick=1), height=500)
+            st.plotly_chart(fig_acum, use_container_width=True)
+
+            fig_share = px.bar(
+                por_cat, x="ano", y="qtd_empresa", color="Categoria",
+                title="Participação de cada porte nas aberturas (%)",
+                labels={"qtd_empresa": "% das aberturas", "ano": "Ano"}
+            )
+            fig_share.update_layout(barnorm="percent", xaxis=dict(tickmode="linear", dtick=1), height=500)
+            st.plotly_chart(fig_share, use_container_width=True)
+
+            st.caption(
+                "Atenção: a base conta apenas negócios **hoje ativos**, por ano de abertura. Negócios abertos e "
+                "encerrados no passado não aparecem, então os anos antigos tendem a ser subestimados. "
+                "O MEI só existe desde 2009, e o último ano pode estar incompleto."
+            )
 
 except Exception as e:
     st.error(f"Erro ao processar a página: {e}")

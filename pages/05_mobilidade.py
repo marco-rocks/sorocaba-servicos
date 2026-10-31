@@ -384,6 +384,81 @@ try:
 
     st.caption("Fonte dos dados: SIDRA/IBGE")
 
+    # ==========================================================
+    # LOCOMOÇÃO INDUSTRIAL
+    # ==========================================================
+
+    st.markdown("---")
+    st.header("🏭 Locomoção Industrial")
+
+    palavras_ind = ("indústria", "industria", "transformação", "transformacao", "extrativ")
+    atividades = sorted(df["atividade"].dropna().unique())
+    padrao_ind = [a for a in atividades if any(p in a.lower() for p in palavras_ind)]
+
+    ativ_sel = st.multiselect(
+        "Atividades consideradas industriais",
+        atividades,
+        default=padrao_ind
+    )
+
+    if not ativ_sel:
+        st.info("Selecione ao menos uma atividade para ver a análise industrial.")
+    else:
+        df_ind = df[df["atividade"].isin(ativ_sel)]
+
+        ind_res = int(df_ind.loc[df_ind["local_trabalho"] == "Município de residência", "trabalhadores"].sum())
+        ind_out = int(df_ind.loc[df_ind["local_trabalho"] == "Outro município", "trabalhadores"].sum())
+        taxa_ind = (ind_out / (ind_res + ind_out) * 100) if (ind_res + ind_out) > 0 else 0
+
+        taxa_geral_base = (
+            df.loc[df["local_trabalho"] == "Município de residência", "trabalhadores"].sum()
+            + df.loc[df["local_trabalho"] == "Outro município", "trabalhadores"].sum()
+        )
+        taxa_geral = (outro_municipio / taxa_geral_base * 100) if taxa_geral_base > 0 else 0
+
+        i1, i2, i3 = st.columns(3)
+        i1.metric("🏭 Industriais que trabalham em outro município", f"{ind_out:,}".replace(",", "."))
+        i2.metric("Taxa de locomoção industrial", f"{taxa_ind:.1f}%")
+        i3.metric("Taxa geral (todos os setores)", f"{taxa_geral:.1f}%", delta=f"{taxa_ind - taxa_geral:+.1f} p.p. (indústria vs geral)")
+
+        fig_ind = px.bar(
+            df_ind[df_ind["local_trabalho"].isin(["Município de residência", "Outro município"])],
+            x="atividade", y="trabalhadores", color="local_trabalho", barmode="group",
+            title="Atividades industriais: trabalham na cidade vs. em outro município"
+        )
+        fig_ind.update_layout(height=600, xaxis_tickangle=-35)
+        st.plotly_chart(fig_ind, use_container_width=True)
+        st.caption("Fonte dos dados: SIDRA/IBGE (Censo 2010)")
+
+    # --- QUAL CIDADE? (depende de base com destino) ---
+    st.subheader("📍 Para qual cidade vai a locomoção industrial?")
+
+    arq_cidades = DATA_DIR / "deslocamento_cidades.csv"
+    if arq_cidades.exists():
+        df_cid = pd.read_csv(arq_cidades)
+        # Esperado: colunas 'cidade_destino' e 'trabalhadores' (opcional: 'atividade')
+        df_cid["trabalhadores"] = pd.to_numeric(df_cid["trabalhadores"], errors="coerce")
+        df_cid = df_cid.dropna(subset=["trabalhadores"])
+        if "atividade" in df_cid.columns and ativ_sel:
+            df_cid = df_cid[df_cid["atividade"].isin(ativ_sel)]
+        rank_cid = (
+            df_cid.groupby("cidade_destino", as_index=False)["trabalhadores"].sum()
+            .sort_values("trabalhadores", ascending=False).head(15)
+        )
+        fig_cid = px.bar(
+            rank_cid, x="trabalhadores", y="cidade_destino", orientation="h",
+            text="trabalhadores", color="trabalhadores", color_continuous_scale="Reds",
+            title="Top 15 cidades de destino"
+        )
+        fig_cid.update_layout(height=600, yaxis=dict(categoryorder="total ascending"))
+        st.plotly_chart(fig_cid, use_container_width=True)
+    else:
+        st.info(
+            "A base atual informa **quantos** trabalhadores saem de Sorocaba, mas não **para onde**. "
+            "Para ver o ranking de cidades, adicione `deslocamento_cidades.csv` em `data/raw/mobilidade/` "
+            "com as colunas `cidade_destino` e `trabalhadores` (opcional: `atividade`)."
+        )
+
 except FileNotFoundError:
     st.error(
         "Arquivo 'mobilidade_regional_tratada.csv' não encontrado."
