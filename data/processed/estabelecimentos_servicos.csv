@@ -1,0 +1,43 @@
+divisao_id;tipo;qtd_empresa
+H49;Transporte Terrestre;7947
+H50;Transporte Aquaviário;21
+H51;Transporte Aéreo;11
+H52;Armazenamento e Atividades Auxiliares dos Transportes;995
+H53;Correio e Outras Atividades de Entrega;4650
+H55;Alojamento;171
+I56;Alimentação;9178
+J58;Edição e Edição Integrada à Impressão;1090
+J59;Atividades Cinematográficas, Produção de Vídeos e de Programas de Televisão, Gravação de Som e Edição de Música;867
+J60;Atividades de Rádio e de Televisão;20
+J61;Telecomunicações;347
+J62;Atividades dos Serviços de Tecnologia da Informação;1788
+J63;Atividades de Prestação de Serviços de Informação;381
+K64;Atividades de Serviços Financeiros;1671
+K65;Seguros, Resseguros, Previdência Complementar e Planos de Saúde;43
+K66;Atividades Auxiliares dos Serviços Financeiros, Seguros, Previdência Complementar e Planos de Saúde;706
+L68;Atividades Imobiliárias;2223
+M69;Atividades Jurídicas, de Contabilidade e de Auditoria;1497
+M70;Atividades de Sedes de Empresas e de Consultoria em Gestão Empresarial;900
+M71;Serviços de Arquitetura e Engenharia, Testes e Análises Técnicas;1324
+M72;Pesquisa e Desenvolvimento Científico;36
+M73;Publicidade e Pesquisa de Mercado;6125
+M74;Outras Atividades Profissionais, Científicas e Técnicas;1401
+M75;Atividades Veterinárias;312
+N77;Aluguéis Não Imobiliários e Gestão de Ativos Intangíveis Não Financeiros;973
+N78;Seleção, Agenciamento e Locação de Mão de Obra;96
+N79;Agências de Viagens, Operadores Turísticos e Serviços de Reservas;471
+N80;Atividades de Vigilância, Segurança e Investigação;213
+N81;Serviços para Edifícios e Atividades Paisagísticas;2967
+N82;Serviços de Escritório, de Apoio Administrativo e Outros Serviços Prestados Principalmente às Empresas;10536
+P85;Educação;6349
+Q86;Atividades de Atenção à Saúde Humana;4866
+Q87;Atividades de Atenção à Saúde Humana Integradas com Assistência Social, Prestadas em Residências Coletivas e Particulares;1317
+Q88;Serviços de Assistência Social sem Alojamento;106
+R90;Atividades Artísticas, Criativas e de Espetáculos;651
+R91;Atividades Ligadas ao Patrimônio Cultural e Ambiental;11
+R92;Atividades de Exploração de Jogos de Azar e Apostas;3
+R93;Atividades Esportivas e de Recreação e Lazer;713
+S94;Atividades de Organizações Associativas;1802
+S95;Reparação e Manutenção de Equipamentos de Informática e Comunicação e de Objetos Pessoais e Domésticos;1943
+S96;Outras Atividades de Serviços Pessoais;8235
+T97;Serviços Domésticos;1679

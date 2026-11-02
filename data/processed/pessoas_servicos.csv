@@ -1,0 +1,403 @@
+ano;divisao_id;tipo;qtd_pessoas
+2016;H49;Transporte Terrestre;2453
+2016;H50;Transporte Aquaviário;0
+2016;H51;Transporte Aéreo;51
+2016;H52;Armazenamento e Atividades Auxiliares dos Transportes;777
+2016;H53;Correio e Outras Atividades de Entrega;284
+2016;H55;Alojamento;806
+2016;I56;Alimentação;6271
+2016;J58;Edição e Edição Integrada à Impressão;146
+2016;J59;Atividades Cinematográficas, Produção de Vídeos e de Programas de Televisão, Gravação de Som e Edição de Música;81
+2016;J60;Atividades de Rádio e de Televisão;89
+2016;J61;Telecomunicações;266
+2016;J62;Atividades dos Serviços de Tecnologia da Informação;432
+2016;J63;Atividades de Prestação de Serviços de Informação;162
+2016;K64;Atividades de Serviços Financeiros;1090
+2016;K65;Seguros, Resseguros, Previdência Complementar e Planos de Saúde;197
+2016;K66;Atividades Auxiliares dos Serviços Financeiros, Seguros, Previdência Complementar e Planos de Saúde;430
+2016;L68;Atividades Imobiliárias;487
+2016;M69;Atividades Jurídicas, de Contabilidade e de Auditoria;1514
+2016;M70;Atividades de Sedes de Empresas e de Consultoria em Gestão Empresarial;179
+2016;M71;Serviços de Arquitetura e Engenharia, Testes e Análises Técnicas;456
+2016;M72;Pesquisa e Desenvolvimento Científico;10
+2016;M73;Publicidade e Pesquisa de Mercado;240
+2016;M74;Outras Atividades Profissionais, Científicas e Técnicas;197
+2016;M75;Atividades Veterinárias;71
+2016;N77;Aluguéis Não Imobiliários e Gestão de Ativos Intangíveis Não Financeiros;594
+2016;N78;Seleção, Agenciamento e Locação de Mão de Obra;347
+2016;N79;Agências de Viagens, Operadores Turísticos e Serviços de Reservas;157
+2016;N80;Atividades de Vigilância, Segurança e Investigação;264
+2016;N81;Serviços para Edifícios e Atividades Paisagísticas;1770
+2016;N82;Serviços de Escritório, de Apoio Administrativo e Outros Serviços Prestados Principalmente às Empresas;2339
+2016;P85;Educação;3002
+2016;Q86;Atividades de Atenção à Saúde Humana;2730
+2016;Q87;Atividades de Atenção à Saúde Humana Integradas com Assistência Social, Prestadas em Residências Coletivas e Particulares;210
+2016;Q88;Serviços de Assistência Social sem Alojamento;11
+2016;R90;Atividades Artísticas, Criativas e de Espetáculos;26
+2016;R91;Atividades Ligadas ao Patrimônio Cultural e Ambiental;0
+2016;R93;Atividades Esportivas e de Recreação e Lazer;476
+2016;S95;Reparação e Manutenção de Equipamentos de Informática e Comunicação e de Objetos Pessoais e Domésticos;519
+2016;S96;Outras Atividades de Serviços Pessoais;554
+2016;T97;Serviços Domésticos;4
+2017;H49;Transporte Terrestre;2446
+2017;H50;Transporte Aquaviário;2
+2017;H51;Transporte Aéreo;67
+2017;H52;Armazenamento e Atividades Auxiliares dos Transportes;762
+2017;H53;Correio e Outras Atividades de Entrega;264
+2017;H55;Alojamento;710
+2017;I56;Alimentação;6335
+2017;J58;Edição e Edição Integrada à Impressão;116
+2017;J59;Atividades Cinematográficas, Produção de Vídeos e de Programas de Televisão, Gravação de Som e Edição de Música;97
+2017;J60;Atividades de Rádio e de Televisão;94
+2017;J61;Telecomunicações;207
+2017;J62;Atividades dos Serviços de Tecnologia da Informação;330
+2017;J63;Atividades de Prestação de Serviços de Informação;189
+2017;K64;Atividades de Serviços Financeiros;960
+2017;K65;Seguros, Resseguros, Previdência Complementar e Planos de Saúde;179
+2017;K66;Atividades Auxiliares dos Serviços Financeiros, Seguros, Previdência Complementar e Planos de Saúde;456
+2017;L68;Atividades Imobiliárias;599
+2017;M69;Atividades Jurídicas, de Contabilidade e de Auditoria;1513
+2017;M70;Atividades de Sedes de Empresas e de Consultoria em Gestão Empresarial;134
+2017;M71;Serviços de Arquitetura e Engenharia, Testes e Análises Técnicas;438
+2017;M72;Pesquisa e Desenvolvimento Científico;14
+2017;M73;Publicidade e Pesquisa de Mercado;322
+2017;M74;Outras Atividades Profissionais, Científicas e Técnicas;207
+2017;M75;Atividades Veterinárias;84
+2017;N77;Aluguéis Não Imobiliários e Gestão de Ativos Intangíveis Não Financeiros;540
+2017;N78;Seleção, Agenciamento e Locação de Mão de Obra;290
+2017;N79;Agências de Viagens, Operadores Turísticos e Serviços de Reservas;177
+2017;N80;Atividades de Vigilância, Segurança e Investigação;289
+2017;N81;Serviços para Edifícios e Atividades Paisagísticas;1802
+2017;N82;Serviços de Escritório, de Apoio Administrativo e Outros Serviços Prestados Principalmente às Empresas;2533
+2017;P85;Educação;3256
+2017;Q86;Atividades de Atenção à Saúde Humana;2770
+2017;Q87;Atividades de Atenção à Saúde Humana Integradas com Assistência Social, Prestadas em Residências Coletivas e Particulares;257
+2017;Q88;Serviços de Assistência Social sem Alojamento;8
+2017;R90;Atividades Artísticas, Criativas e de Espetáculos;27
+2017;R91;Atividades Ligadas ao Patrimônio Cultural e Ambiental;0
+2017;R93;Atividades Esportivas e de Recreação e Lazer;453
+2017;S95;Reparação e Manutenção de Equipamentos de Informática e Comunicação e de Objetos Pessoais e Domésticos;513
+2017;S96;Outras Atividades de Serviços Pessoais;651
+2017;T97;Serviços Domésticos;7
+2018;H49;Transporte Terrestre;2298
+2018;H50;Transporte Aquaviário;1
+2018;H51;Transporte Aéreo;40
+2018;H52;Armazenamento e Atividades Auxiliares dos Transportes;819
+2018;H53;Correio e Outras Atividades de Entrega;365
+2018;H55;Alojamento;730
+2018;I56;Alimentação;6211
+2018;J58;Edição e Edição Integrada à Impressão;85
+2018;J59;Atividades Cinematográficas, Produção de Vídeos e de Programas de Televisão, Gravação de Som e Edição de Música;93
+2018;J60;Atividades de Rádio e de Televisão;81
+2018;J61;Telecomunicações;295
+2018;J62;Atividades dos Serviços de Tecnologia da Informação;504
+2018;J63;Atividades de Prestação de Serviços de Informação;94
+2018;K64;Atividades de Serviços Financeiros;1008
+2018;K65;Seguros, Resseguros, Previdência Complementar e Planos de Saúde;186
+2018;K66;Atividades Auxiliares dos Serviços Financeiros, Seguros, Previdência Complementar e Planos de Saúde;452
+2018;L68;Atividades Imobiliárias;596
+2018;M69;Atividades Jurídicas, de Contabilidade e de Auditoria;1559
+2018;M70;Atividades de Sedes de Empresas e de Consultoria em Gestão Empresarial;108
+2018;M71;Serviços de Arquitetura e Engenharia, Testes e Análises Técnicas;499
+2018;M72;Pesquisa e Desenvolvimento Científico;11
+2018;M73;Publicidade e Pesquisa de Mercado;425
+2018;M74;Outras Atividades Profissionais, Científicas e Técnicas;166
+2018;M75;Atividades Veterinárias;102
+2018;N77;Aluguéis Não Imobiliários e Gestão de Ativos Intangíveis Não Financeiros;501
+2018;N78;Seleção, Agenciamento e Locação de Mão de Obra;316
+2018;N79;Agências de Viagens, Operadores Turísticos e Serviços de Reservas;190
+2018;N80;Atividades de Vigilância, Segurança e Investigação;143
+2018;N81;Serviços para Edifícios e Atividades Paisagísticas;1782
+2018;N82;Serviços de Escritório, de Apoio Administrativo e Outros Serviços Prestados Principalmente às Empresas;2808
+2018;P85;Educação;2976
+2018;Q86;Atividades de Atenção à Saúde Humana;2788
+2018;Q87;Atividades de Atenção à Saúde Humana Integradas com Assistência Social, Prestadas em Residências Coletivas e Particulares;285
+2018;Q88;Serviços de Assistência Social sem Alojamento;8
+2018;R90;Atividades Artísticas, Criativas e de Espetáculos;31
+2018;R91;Atividades Ligadas ao Patrimônio Cultural e Ambiental;1
+2018;R93;Atividades Esportivas e de Recreação e Lazer;507
+2018;S95;Reparação e Manutenção de Equipamentos de Informática e Comunicação e de Objetos Pessoais e Domésticos;316
+2018;S96;Outras Atividades de Serviços Pessoais;639
+2018;T97;Serviços Domésticos;2
+2019;H49;Transporte Terrestre;2128
+2019;H50;Transporte Aquaviário;0
+2019;H51;Transporte Aéreo;37
+2019;H52;Armazenamento e Atividades Auxiliares dos Transportes;660
+2019;H53;Correio e Outras Atividades de Entrega;270
+2019;H55;Alojamento;721
+2019;I56;Alimentação;6911
+2019;J58;Edição e Edição Integrada à Impressão;84
+2019;J59;Atividades Cinematográficas, Produção de Vídeos e de Programas de Televisão, Gravação de Som e Edição de Música;161
+2019;J60;Atividades de Rádio e de Televisão;67
+2019;J61;Telecomunicações;291
+2019;J62;Atividades dos Serviços de Tecnologia da Informação;525
+2019;J63;Atividades de Prestação de Serviços de Informação;78
+2019;K64;Atividades de Serviços Financeiros;965
+2019;K65;Seguros, Resseguros, Previdência Complementar e Planos de Saúde;207
+2019;K66;Atividades Auxiliares dos Serviços Financeiros, Seguros, Previdência Complementar e Planos de Saúde;463
+2019;L68;Atividades Imobiliárias;628
+2019;M69;Atividades Jurídicas, de Contabilidade e de Auditoria;1610
+2019;M70;Atividades de Sedes de Empresas e de Consultoria em Gestão Empresarial;134
+2019;M71;Serviços de Arquitetura e Engenharia, Testes e Análises Técnicas;583
+2019;M72;Pesquisa e Desenvolvimento Científico;11
+2019;M73;Publicidade e Pesquisa de Mercado;404
+2019;M74;Outras Atividades Profissionais, Científicas e Técnicas;125
+2019;M75;Atividades Veterinárias;102
+2019;N77;Aluguéis Não Imobiliários e Gestão de Ativos Intangíveis Não Financeiros;517
+2019;N78;Seleção, Agenciamento e Locação de Mão de Obra;246
+2019;N79;Agências de Viagens, Operadores Turísticos e Serviços de Reservas;226
+2019;N80;Atividades de Vigilância, Segurança e Investigação;187
+2019;N81;Serviços para Edifícios e Atividades Paisagísticas;1647
+2019;N82;Serviços de Escritório, de Apoio Administrativo e Outros Serviços Prestados Principalmente às Empresas;2908
+2019;P85;Educação;2937
+2019;Q86;Atividades de Atenção à Saúde Humana;2900
+2019;Q87;Atividades de Atenção à Saúde Humana Integradas com Assistência Social, Prestadas em Residências Coletivas e Particulares;362
+2019;Q88;Serviços de Assistência Social sem Alojamento;3
+2019;R90;Atividades Artísticas, Criativas e de Espetáculos;26
+2019;R91;Atividades Ligadas ao Patrimônio Cultural e Ambiental;1
+2019;R93;Atividades Esportivas e de Recreação e Lazer;534
+2019;S95;Reparação e Manutenção de Equipamentos de Informática e Comunicação e de Objetos Pessoais e Domésticos;337
+2019;S96;Outras Atividades de Serviços Pessoais;695
+2019;T97;Serviços Domésticos;3
+2020;H49;Transporte Terrestre;2256
+2020;H50;Transporte Aquaviário;0
+2020;H51;Transporte Aéreo;49
+2020;H52;Armazenamento e Atividades Auxiliares dos Transportes;734
+2020;H53;Correio e Outras Atividades de Entrega;235
+2020;H55;Alojamento;670
+2020;I56;Alimentação;5646
+2020;J58;Edição e Edição Integrada à Impressão;81
+2020;J59;Atividades Cinematográficas, Produção de Vídeos e de Programas de Televisão, Gravação de Som e Edição de Música;124
+2020;J60;Atividades de Rádio e de Televisão;66
+2020;J61;Telecomunicações;360
+2020;J62;Atividades dos Serviços de Tecnologia da Informação;528
+2020;J63;Atividades de Prestação de Serviços de Informação;81
+2020;K64;Atividades de Serviços Financeiros;687
+2020;K65;Seguros, Resseguros, Previdência Complementar e Planos de Saúde;221
+2020;K66;Atividades Auxiliares dos Serviços Financeiros, Seguros, Previdência Complementar e Planos de Saúde;453
+2020;L68;Atividades Imobiliárias;551
+2020;M69;Atividades Jurídicas, de Contabilidade e de Auditoria;1635
+2020;M70;Atividades de Sedes de Empresas e de Consultoria em Gestão Empresarial;100
+2020;M71;Serviços de Arquitetura e Engenharia, Testes e Análises Técnicas;565
+2020;M72;Pesquisa e Desenvolvimento Científico;18
+2020;M73;Publicidade e Pesquisa de Mercado;399
+2020;M74;Outras Atividades Profissionais, Científicas e Técnicas;151
+2020;M75;Atividades Veterinárias;130
+2020;N77;Aluguéis Não Imobiliários e Gestão de Ativos Intangíveis Não Financeiros;527
+2020;N78;Seleção, Agenciamento e Locação de Mão de Obra;300
+2020;N79;Agências de Viagens, Operadores Turísticos e Serviços de Reservas;164
+2020;N80;Atividades de Vigilância, Segurança e Investigação;237
+2020;N81;Serviços para Edifícios e Atividades Paisagísticas;1412
+2020;N82;Serviços de Escritório, de Apoio Administrativo e Outros Serviços Prestados Principalmente às Empresas;2970
+2020;P85;Educação;2772
+2020;Q86;Atividades de Atenção à Saúde Humana;3024
+2020;Q87;Atividades de Atenção à Saúde Humana Integradas com Assistência Social, Prestadas em Residências Coletivas e Particulares;437
+2020;Q88;Serviços de Assistência Social sem Alojamento;1
+2020;R90;Atividades Artísticas, Criativas e de Espetáculos;26
+2020;R91;Atividades Ligadas ao Patrimônio Cultural e Ambiental;0
+2020;R93;Atividades Esportivas e de Recreação e Lazer;394
+2020;S95;Reparação e Manutenção de Equipamentos de Informática e Comunicação e de Objetos Pessoais e Domésticos;283
+2020;S96;Outras Atividades de Serviços Pessoais;619
+2020;T97;Serviços Domésticos;2
+2021;H49;Transporte Terrestre;2459
+2021;H50;Transporte Aquaviário;0
+2021;H51;Transporte Aéreo;54
+2021;H52;Armazenamento e Atividades Auxiliares dos Transportes;587
+2021;H53;Correio e Outras Atividades de Entrega;217
+2021;H55;Alojamento;676
+2021;I56;Alimentação;5840
+2021;J58;Edição e Edição Integrada à Impressão;72
+2021;J59;Atividades Cinematográficas, Produção de Vídeos e de Programas de Televisão, Gravação de Som e Edição de Música;142
+2021;J60;Atividades de Rádio e de Televisão;117
+2021;J61;Telecomunicações;351
+2021;J62;Atividades dos Serviços de Tecnologia da Informação;654
+2021;J63;Atividades de Prestação de Serviços de Informação;122
+2021;K64;Atividades de Serviços Financeiros;865
+2021;K65;Seguros, Resseguros, Previdência Complementar e Planos de Saúde;243
+2021;K66;Atividades Auxiliares dos Serviços Financeiros, Seguros, Previdência Complementar e Planos de Saúde;519
+2021;L68;Atividades Imobiliárias;725
+2021;M69;Atividades Jurídicas, de Contabilidade e de Auditoria;1687
+2021;M70;Atividades de Sedes de Empresas e de Consultoria em Gestão Empresarial;131
+2021;M71;Serviços de Arquitetura e Engenharia, Testes e Análises Técnicas;507
+2021;M72;Pesquisa e Desenvolvimento Científico;22
+2021;M73;Publicidade e Pesquisa de Mercado;237
+2021;M74;Outras Atividades Profissionais, Científicas e Técnicas;205
+2021;M75;Atividades Veterinárias;124
+2021;N77;Aluguéis Não Imobiliários e Gestão de Ativos Intangíveis Não Financeiros;603
+2021;N78;Seleção, Agenciamento e Locação de Mão de Obra;293
+2021;N79;Agências de Viagens, Operadores Turísticos e Serviços de Reservas;155
+2021;N80;Atividades de Vigilância, Segurança e Investigação;306
+2021;N81;Serviços para Edifícios e Atividades Paisagísticas;1658
+2021;N82;Serviços de Escritório, de Apoio Administrativo e Outros Serviços Prestados Principalmente às Empresas;2998
+2021;P85;Educação;2839
+2021;Q86;Atividades de Atenção à Saúde Humana;3346
+2021;Q87;Atividades de Atenção à Saúde Humana Integradas com Assistência Social, Prestadas em Residências Coletivas e Particulares;368
+2021;R90;Atividades Artísticas, Criativas e de Espetáculos;15
+2021;R91;Atividades Ligadas ao Patrimônio Cultural e Ambiental;0
+2021;R92;Atividades de Exploração de Jogos de Azar e Apostas;0
+2021;R93;Atividades Esportivas e de Recreação e Lazer;446
+2021;S95;Reparação e Manutenção de Equipamentos de Informática e Comunicação e de Objetos Pessoais e Domésticos;225
+2021;S96;Outras Atividades de Serviços Pessoais;650
+2021;T97;Serviços Domésticos;2
+2022;H49;Transporte Terrestre;2464
+2022;H50;Transporte Aquaviário;0
+2022;H51;Transporte Aéreo;72
+2022;H52;Armazenamento e Atividades Auxiliares dos Transportes;719
+2022;H53;Correio e Outras Atividades de Entrega;252
+2022;H55;Alojamento;697
+2022;I56;Alimentação;6796
+2022;J58;Edição e Edição Integrada à Impressão;101
+2022;J59;Atividades Cinematográficas, Produção de Vídeos e de Programas de Televisão, Gravação de Som e Edição de Música;125
+2022;J60;Atividades de Rádio e de Televisão;115
+2022;J61;Telecomunicações;348
+2022;J62;Atividades dos Serviços de Tecnologia da Informação;728
+2022;J63;Atividades de Prestação de Serviços de Informação;145
+2022;K64;Atividades de Serviços Financeiros;883
+2022;K65;Seguros, Resseguros, Previdência Complementar e Planos de Saúde;186
+2022;K66;Atividades Auxiliares dos Serviços Financeiros, Seguros, Previdência Complementar e Planos de Saúde;506
+2022;L68;Atividades Imobiliárias;716
+2022;M69;Atividades Jurídicas, de Contabilidade e de Auditoria;1807
+2022;M70;Atividades de Sedes de Empresas e de Consultoria em Gestão Empresarial;154
+2022;M71;Serviços de Arquitetura e Engenharia, Testes e Análises Técnicas;692
+2022;M72;Pesquisa e Desenvolvimento Científico;32
+2022;M73;Publicidade e Pesquisa de Mercado;341
+2022;M74;Outras Atividades Profissionais, Científicas e Técnicas;326
+2022;M75;Atividades Veterinárias;140
+2022;N77;Aluguéis Não Imobiliários e Gestão de Ativos Intangíveis Não Financeiros;668
+2022;N78;Seleção, Agenciamento e Locação de Mão de Obra;292
+2022;N79;Agências de Viagens, Operadores Turísticos e Serviços de Reservas;194
+2022;N80;Atividades de Vigilância, Segurança e Investigação;493
+2022;N81;Serviços para Edifícios e Atividades Paisagísticas;1780
+2022;N82;Serviços de Escritório, de Apoio Administrativo e Outros Serviços Prestados Principalmente às Empresas;3612
+2022;P85;Educação;3102
+2022;Q86;Atividades de Atenção à Saúde Humana;3295
+2022;Q87;Atividades de Atenção à Saúde Humana Integradas com Assistência Social, Prestadas em Residências Coletivas e Particulares;457
+2022;Q88;Serviços de Assistência Social sem Alojamento;2
+2022;R90;Atividades Artísticas, Criativas e de Espetáculos;27
+2022;R91;Atividades Ligadas ao Patrimônio Cultural e Ambiental;0
+2022;R93;Atividades Esportivas e de Recreação e Lazer;637
+2022;S95;Reparação e Manutenção de Equipamentos de Informática e Comunicação e de Objetos Pessoais e Domésticos;165
+2022;S96;Outras Atividades de Serviços Pessoais;757
+2022;T97;Serviços Domésticos;2
+2023;H49;Transporte Terrestre;2816
+2023;H50;Transporte Aquaviário;0
+2023;H51;Transporte Aéreo;75
+2023;H52;Armazenamento e Atividades Auxiliares dos Transportes;716
+2023;H53;Correio e Outras Atividades de Entrega;240
+2023;H55;Alojamento;726
+2023;I56;Alimentação;7314
+2023;J58;Edição e Edição Integrada à Impressão;117
+2023;J59;Atividades Cinematográficas, Produção de Vídeos e de Programas de Televisão, Gravação de Som e Edição de Música;122
+2023;J60;Atividades de Rádio e de Televisão;113
+2023;J61;Telecomunicações;431
+2023;J62;Atividades dos Serviços de Tecnologia da Informação;640
+2023;J63;Atividades de Prestação de Serviços de Informação;117
+2023;K64;Atividades de Serviços Financeiros;886
+2023;K65;Seguros, Resseguros, Previdência Complementar e Planos de Saúde;171
+2023;K66;Atividades Auxiliares dos Serviços Financeiros, Seguros, Previdência Complementar e Planos de Saúde;498
+2023;L68;Atividades Imobiliárias;652
+2023;M69;Atividades Jurídicas, de Contabilidade e de Auditoria;1865
+2023;M70;Atividades de Sedes de Empresas e de Consultoria em Gestão Empresarial;184
+2023;M71;Serviços de Arquitetura e Engenharia, Testes e Análises Técnicas;801
+2023;M72;Pesquisa e Desenvolvimento Científico;22
+2023;M73;Publicidade e Pesquisa de Mercado;381
+2023;M74;Outras Atividades Profissionais, Científicas e Técnicas;328
+2023;M75;Atividades Veterinárias;168
+2023;N77;Aluguéis Não Imobiliários e Gestão de Ativos Intangíveis Não Financeiros;872
+2023;N78;Seleção, Agenciamento e Locação de Mão de Obra;471
+2023;N79;Agências de Viagens, Operadores Turísticos e Serviços de Reservas;216
+2023;N80;Atividades de Vigilância, Segurança e Investigação;479
+2023;N81;Serviços para Edifícios e Atividades Paisagísticas;1673
+2023;N82;Serviços de Escritório, de Apoio Administrativo e Outros Serviços Prestados Principalmente às Empresas;4122
+2023;P85;Educação;3266
+2023;Q86;Atividades de Atenção à Saúde Humana;3219
+2023;Q87;Atividades de Atenção à Saúde Humana Integradas com Assistência Social, Prestadas em Residências Coletivas e Particulares;523
+2023;Q88;Serviços de Assistência Social sem Alojamento;1
+2023;R90;Atividades Artísticas, Criativas e de Espetáculos;31
+2023;R91;Atividades Ligadas ao Patrimônio Cultural e Ambiental;0
+2023;R93;Atividades Esportivas e de Recreação e Lazer;686
+2023;S95;Reparação e Manutenção de Equipamentos de Informática e Comunicação e de Objetos Pessoais e Domésticos;146
+2023;S96;Outras Atividades de Serviços Pessoais;760
+2023;T97;Serviços Domésticos;1
+2024;H49;Transporte Terrestre;2872
+2024;H50;Transporte Aquaviário;0
+2024;H51;Transporte Aéreo;72
+2024;H52;Armazenamento e Atividades Auxiliares dos Transportes;786
+2024;H53;Correio e Outras Atividades de Entrega;279
+2024;H55;Alojamento;767
+2024;I56;Alimentação;7186
+2024;J58;Edição e Edição Integrada à Impressão;110
+2024;J59;Atividades Cinematográficas, Produção de Vídeos e de Programas de Televisão, Gravação de Som e Edição de Música;111
+2024;J60;Atividades de Rádio e de Televisão;114
+2024;J61;Telecomunicações;377
+2024;J62;Atividades dos Serviços de Tecnologia da Informação;667
+2024;J63;Atividades de Prestação de Serviços de Informação;160
+2024;K64;Atividades de Serviços Financeiros;767
+2024;K65;Seguros, Resseguros, Previdência Complementar e Planos de Saúde;231
+2024;K66;Atividades Auxiliares dos Serviços Financeiros, Seguros, Previdência Complementar e Planos de Saúde;573
+2024;L68;Atividades Imobiliárias;670
+2024;M69;Atividades Jurídicas, de Contabilidade e de Auditoria;1727
+2024;M70;Atividades de Sedes de Empresas e de Consultoria em Gestão Empresarial;165
+2024;M71;Serviços de Arquitetura e Engenharia, Testes e Análises Técnicas;847
+2024;M72;Pesquisa e Desenvolvimento Científico;16
+2024;M73;Publicidade e Pesquisa de Mercado;459
+2024;M74;Outras Atividades Profissionais, Científicas e Técnicas;380
+2024;M75;Atividades Veterinárias;151
+2024;N77;Aluguéis Não Imobiliários e Gestão de Ativos Intangíveis Não Financeiros;866
+2024;N78;Seleção, Agenciamento e Locação de Mão de Obra;437
+2024;N79;Agências de Viagens, Operadores Turísticos e Serviços de Reservas;218
+2024;N80;Atividades de Vigilância, Segurança e Investigação;543
+2024;N81;Serviços para Edifícios e Atividades Paisagísticas;1621
+2024;N82;Serviços de Escritório, de Apoio Administrativo e Outros Serviços Prestados Principalmente às Empresas;4560
+2024;P85;Educação;3299
+2024;Q86;Atividades de Atenção à Saúde Humana;3428
+2024;Q87;Atividades de Atenção à Saúde Humana Integradas com Assistência Social, Prestadas em Residências Coletivas e Particulares;545
+2024;Q88;Serviços de Assistência Social sem Alojamento;2
+2024;R90;Atividades Artísticas, Criativas e de Espetáculos;36
+2024;R91;Atividades Ligadas ao Patrimônio Cultural e Ambiental;0
+2024;R92;Atividades de Exploração de Jogos de Azar e Apostas;1
+2024;R93;Atividades Esportivas e de Recreação e Lazer;886
+2024;S95;Reparação e Manutenção de Equipamentos de Informática e Comunicação e de Objetos Pessoais e Domésticos;152
+2024;S96;Outras Atividades de Serviços Pessoais;731
+2024;T97;Serviços Domésticos;1
+2025;H49;Transporte Terrestre;2855
+2025;H50;Transporte Aquaviário;0
+2025;H51;Transporte Aéreo;75
+2025;H52;Armazenamento e Atividades Auxiliares dos Transportes;793
+2025;H53;Correio e Outras Atividades de Entrega;220
+2025;H55;Alojamento;695
+2025;I56;Alimentação;7483
+2025;J58;Edição e Edição Integrada à Impressão;107
+2025;J59;Atividades Cinematográficas, Produção de Vídeos e de Programas de Televisão, Gravação de Som e Edição de Música;101
+2025;J60;Atividades de Rádio e de Televisão;99
+2025;J61;Telecomunicações;312
+2025;J62;Atividades dos Serviços de Tecnologia da Informação;814
+2025;J63;Atividades de Prestação de Serviços de Informação;144
+2025;K64;Atividades de Serviços Financeiros;769
+2025;K65;Seguros, Resseguros, Previdência Complementar e Planos de Saúde;277
+2025;K66;Atividades Auxiliares dos Serviços Financeiros, Seguros, Previdência Complementar e Planos de Saúde;562
+2025;L68;Atividades Imobiliárias;655
+2025;M69;Atividades Jurídicas, de Contabilidade e de Auditoria;1948
+2025;M70;Atividades de Sedes de Empresas e de Consultoria em Gestão Empresarial;152
+2025;M71;Serviços de Arquitetura e Engenharia, Testes e Análises Técnicas;778
+2025;M72;Pesquisa e Desenvolvimento Científico;30
+2025;M73;Publicidade e Pesquisa de Mercado;416
+2025;M74;Outras Atividades Profissionais, Científicas e Técnicas;367
+2025;M75;Atividades Veterinárias;162
+2025;N77;Aluguéis Não Imobiliários e Gestão de Ativos Intangíveis Não Financeiros;954
+2025;N78;Seleção, Agenciamento e Locação de Mão de Obra;274
+2025;N79;Agências de Viagens, Operadores Turísticos e Serviços de Reservas;260
+2025;N80;Atividades de Vigilância, Segurança e Investigação;608
+2025;N81;Serviços para Edifícios e Atividades Paisagísticas;1903
+2025;N82;Serviços de Escritório, de Apoio Administrativo e Outros Serviços Prestados Principalmente às Empresas;4461
+2025;P85;Educação;3338
+2025;Q86;Atividades de Atenção à Saúde Humana;3542
+2025;Q87;Atividades de Atenção à Saúde Humana Integradas com Assistência Social, Prestadas em Residências Coletivas e Particulares;586
+2025;Q88;Serviços de Assistência Social sem Alojamento;4
+2025;R90;Atividades Artísticas, Criativas e de Espetáculos;35
+2025;R91;Atividades Ligadas ao Patrimônio Cultural e Ambiental;0
+2025;R92;Atividades de Exploração de Jogos de Azar e Apostas;10
+2025;R93;Atividades Esportivas e de Recreação e Lazer;950
+2025;S95;Reparação e Manutenção de Equipamentos de Informática e Comunicação e de Objetos Pessoais e Domésticos;145
+2025;S96;Outras Atividades de Serviços Pessoais;675
+2025;T97;Serviços Domésticos;3
