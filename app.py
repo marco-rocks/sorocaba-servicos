@@ -96,13 +96,49 @@ def renderizar_home():
     col3.metric("Empregos Formais", m["empregos_val"], m["empregos_delta"])
     col4.metric("Salário Médio Formal", m["salario_val"], m["salario_sub"])
 
-# --- DEFINIÇÃO DAS PÁGINAS ACTIVAS ---
+    # --- INFORMAÇÕES DE CONTEXTO ---
+    st.markdown("---")
+    st.header("🏙️ Panorama Histórico, Geográfico e Institucional de Sorocaba")
+
+    tab1, tab2, tab3 = st.tabs(["🏛️ Origem & Indicadores", "⏳ Linha do Tempo Histórica", "🏢 Gestão & Apoio ao Trabalhador"])
+
+    with tab1:
+        st.subheader("Origem, Fundação e Posição Regional")
+        st.markdown("""
+        * **Origem e Fundação:** Povoada originalmente pelos índios Tupiniquins e cortada pelo histórico Caminho do Peabiru, a região era rota para bandeirantes e missionários. Fundada oficialmente em 1654 pelo capitão bandeirante Baltazar Fernandes, seu nome vem do Tupi-Guarani ("terra rasgada"). Em 1661, tornou-se Vila com 30 famílias.
+        * **Relevância Econômica:** Sede da Região Metropolitana de Sorocaba (RMS) composta por 27 municípios e mais de 2 milhões de habitantes, atuando como polo de comércio, saúde, tecnologia e serviços.
+        * **Localização Estratégica:** A 87 km da capital paulista, conectada às rodovias Castello Branco e Raposo Tavares. Abriga o Parque Tecnológico de Sorocaba (PTS), voltado para inovação e P&D.
+        """)
+
+    with tab2:
+        st.subheader("Evolução Histórica da Economia Sorocabana")
+        st.markdown("""
+        * **Séc. XVII (Anos 1600) — Ciclo do Bandeirantismo:** Ponto de partida para expedições ao interior do Brasil e expansão das fronteiras nacionais.
+        * **Séc. XVIII e XIX (1733-1890) — Ciclo do Tropeirismo:** Em 1733 ocorreu a passagem da primeira tropa de muares, tornando Sorocaba a capital das Feiras de Muares e conectando o Sul ao Norte/Nordeste do país.
+        * **1818 — Pioneirismo Siderúrgico:** Inauguração dos altos-fornos da Real Fábrica de Ferro São João do Ipanema, marco da metalurgia na América Latina.
+        * **1856 — Ciclo do Algodão:** Introdução do cultivo do algodão herbáceo impulsionado pela demanda de exportação para a Europa.
+        * **1875 — Conexão Férrea:** Inauguração da Estrada de Ferro Sorocabana (EFS) por Luiz Matheus Maylasky para escoar algodão e mercadorias.
+        * **Fim do Séc. XIX — A "Manchester Paulista":** Instalação de grandes indústrias têxteis (Nossa Senhora da Ponte, Santa Rosália e Votorantim), consolidando o perfil industrial da cidade.
+        """)
+
+    with tab3:
+        st.subheader("Gestão de Emprego, Qualificação e Desenvolvimento")
+        st.markdown("""
+        * **SERTE (Secretaria de Relações do Trabalho e Qualificação Profissional):** Formula políticas de qualificação profissional, intermediação de mão de obra e apoio ao trabalhador.
+            * **Uniten (Universidade do Trabalhador Empreendedor e Negócios):** Oferece cursos gratuitos de capacitação e aperfeiçoamento.
+            * **Casa do Trabalhador (SINE Municipal / PAT):** Centralizada no Centro (Rua Cel. Cavalheiros, 353), atua no encaminhamento de vagas, emissão de CTPS digital e seguro-desemprego.
+            * **Van do Emprego e Qualificação:** Unidade móvel que leva vagas e cadastros descentralizados aos bairros e feiras.
+        * **SEDET (Secretaria de Desenvolvimento Econômico e Turismo):** Focada na atração de investimentos privados, multinacionais e expansão industrial e do setor de serviços.
+        """)
+
+# --- DEFINIÇÃO DAS PÁGINAS ATIVAS ---
 p_home = st.Page(renderizar_home, title="Página Inicial", icon="🏠", default=True)
 p_contexto = st.Page("pages/01_contexto.py", title="01 — Contexto Econômico", icon="🏙️")
 p_mercado = st.Page("pages/02_mercado_trabalho.py", title="02 — Mercado de Trabalho", icon="💼")
 p_servicos = st.Page("pages/03_setor_servicos.py", title="03 — Setor de Serviços", icon="🛎️")
 p_salario_ocupacao = st.Page("pages/04_salario_ocupacao.py", title="04 — Salário por Ocupação", icon="💰")
 p_mobilidade = st.Page("pages/05_mobilidade.py", title="05 — Mobilidade Urbana", icon="🚗")
+p_conclusao = st.Page("pages/06_conclusao.py", title="06 — Conclusão", icon="🎯")
 
 # Navegação na barra lateral
 pg = st.navigation({
@@ -112,7 +148,8 @@ pg = st.navigation({
         p_mercado,
         p_servicos,
         p_salario_ocupacao,
-        p_mobilidade
+        p_mobilidade,
+        p_conclusao
     ]
 })
 
