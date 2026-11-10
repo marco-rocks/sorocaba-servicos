@@ -668,7 +668,7 @@ try:
         with col_tg1:
             st.markdown(f"##### 🚀 Top 10 Ocupações com Maior TGCA ({ano_inicial}–{ano_final})")
             top_tgca = df_tgca_filtrado.sort_values("TGCA_%", ascending=False).head(10).copy()
-            top_tgca["Rotulo"] = top_tgca["TGCA_%"].apply(lambda v: f"{v:+.1f}% a.a.".replace(".", ","))
+            top_tgca["Rotulo"] = top_tgca["TGCA_%"].apply(lambda v: f"{v:+.1f}".replace(".", ",") + "% a.a.")
             fig_tgca = px.bar(
                 top_tgca, x="TGCA_%", y="ocupacao", orientation="h", text="Rotulo",
                 title=f"<b>Maiores Taxas Anualizadas de Crescimento (TGCA) — Base ≥ {base_min}</b>",

@@ -67,7 +67,7 @@ try:
         )
         col4.metric(
             label=f"Salário Médio ({ano_ult})", 
-            value=f"{ult_linha['Salário Médio (S.M.)']:.1f} S.M.".replace(".", ",")
+            value=f"{ult_linha['Salário Médio (S.M.)']:.1f}".replace(".", ",") + " S.M."
         )
 
         st.markdown("---")
@@ -134,7 +134,7 @@ try:
 
         with col_r:
             st.subheader("💵 Evolução da Remuneração Média Formal")
-            df_emp["Sal_Rotulo"] = df_emp["Salário Médio (S.M.)"].apply(lambda v: f"{v:.1f} S.M.".replace(".", ","))
+            df_emp["Sal_Rotulo"] = df_emp["Salário Médio (S.M.)"].apply(lambda v: f"{v:.1f}".replace(".", ",") + " S.M.")
             fig_sal = px.line(
                 df_emp,
                 x="Ano",
@@ -169,8 +169,8 @@ try:
         cagr_pes = ((ult_linha["Pessoal Ocupado"] / pri_linha["Pessoal Ocupado"]) ** (1 / n_anos) - 1) * 100
 
         a1, a2, a3 = st.columns(3)
-        a1.metric("Crescimento Médio Anual (Empresas)", f"{cagr_emp:.2f}% a.a.".replace(".", ","))
-        a2.metric("Crescimento Médio Anual (Pessoal Ocupado)", f"{cagr_pes:.2f}% a.a.".replace(".", ","))
+        a1.metric("Crescimento Médio Anual (Empresas)", f"{cagr_emp:.2f}".replace(".", ",") + "% a.a.")
+        a2.metric("Crescimento Médio Anual (Pessoal Ocupado)", f"{cagr_pes:.2f}".replace(".", ",") + "% a.a.")
         a3.metric("Saldo Líquido de Empresas Formais", f"{int(ult_linha['Empresas'] - pri_linha['Empresas']):,}".replace(",", "."))
 
         df_var = df_an.dropna(subset=["Var. Empresas (%)"]).copy()

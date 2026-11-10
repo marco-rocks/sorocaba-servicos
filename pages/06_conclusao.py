@@ -85,11 +85,11 @@ dados = carregar_dados_conclusao()
 
 # Formatação e fallback seguro
 pop_txt = f"{dados['pop_2022']:,.0f}".replace(",", ".") + " hab" if "pop_2022" in dados else "Dado Indisponível"
-pop_cresc_txt = f"+{dados['pop_cresc']:.2f}%" if "pop_cresc" in dados else "Dado Indisponível"
-pib_bi_txt = f"R$ {dados['pib_val_bi']:.2f} Bi" if "pib_val_bi" in dados else "Dado Indisponível"
-cresc_pes_txt = f"+{dados['cresc_pessoal_pct']:.1f}%" if "cresc_pessoal_pct" in dados else "Dado Indisponível"
-cresc_emp_txt = f"+{dados['cresc_empresas_pct']:.1f}%" if "cresc_empresas_pct" in dados else "Dado Indisponível"
-pct_mob_txt = f"{dados['pct_trabalha_local']:.1f}% dos residentes" if "pct_trabalha_local" in dados else "Dado Indisponível"
+pop_cresc_txt = f"+{dados['pop_cresc']:.2f}%".replace(".", ",") if "pop_cresc" in dados else "Dado Indisponível"
+pib_bi_txt = f"R$ {dados['pib_val_bi']:.2f} Bi".replace(".", ",") if "pib_val_bi" in dados else "Dado Indisponível"
+cresc_pes_txt = f"+{dados['cresc_pessoal_pct']:.1f}%".replace(".", ",") if "cresc_pessoal_pct" in dados else "Dado Indisponível"
+cresc_emp_txt = f"+{dados['cresc_empresas_pct']:.1f}%".replace(".", ",") if "cresc_empresas_pct" in dados else "Dado Indisponível"
+pct_mob_txt = f"{dados['pct_trabalha_local']:.1f}% dos residentes".replace(".", ",") if "pct_trabalha_local" in dados else "Dado Indisponível"
 periodo_emp = f"({dados.get('emp_ano_ini', '')}–{dados.get('emp_ano_fim', '')})" if "emp_ano_ini" in dados else ""
 
 # --- CARDS DE SÍNTESE GLOBAL ---
@@ -121,7 +121,7 @@ with col_left:
 with col_right:
     st.markdown(f"""
     ### 💰 3. Dinâmica Salarial e Qualificação Profissional
-    * **Renda Média:** O salário médio formal manteve-se equilibrado na faixa de 3.8 a 4.0 Salários Mínimos, com variações conforme o segmento econômico.
+    * **Renda Média:** O salário médio formal manteve-se equilibrado na faixa de 3,8 a 4,0 Salários Mínimos, com variações conforme o segmento econômico.
     * **Concentração de Massa Salarial:** Atividades administrativas e de atendimento absorvem grande volume de trabalhadores, enquanto serviços técnicos especializados, tecnologia e gestão lideram os patamares salariais mais altos.
     * **Papel da Qualificação:** Iniciativas municipais (como a Uniten e programas da SERTE) mostram-se essenciais para requalificar trabalhadores frente às novas demandas tecnológicas do mercado.
 

@@ -10,10 +10,10 @@ RAW_CONTEXTO_DIR = BASE_DIR / "data" / "raw" / "contexto"
 def carregar_metricas():
     metricas = {
         "populacao_val": "723.682 hab",
-        "populacao_delta": "+23.36% vs 2010",
+        "populacao_delta": "+23,36% vs 2010",
         "pib_label": "PIB Real (2023)",
-        "pib_val": "R$ 58.82 Bi",
-        "pib_delta": "+3.22% no ano",
+        "pib_val": "R$ 58,82 Bi",
+        "pib_delta": "+3,22% no ano",
         "empregos_val": "261.583",
         "empregos_delta": "RAIS / MTE",
         "salario_val": "R$ 4.099,96",

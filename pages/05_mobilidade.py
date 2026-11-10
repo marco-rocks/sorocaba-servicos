@@ -418,8 +418,8 @@ try:
 
         i1, i2, i3 = st.columns(3)
         i1.metric("🏭 Industriais que trabalham em outro município", f"{ind_out:,}".replace(",", "."))
-        i2.metric("Taxa de locomoção industrial", f"{taxa_ind:.1f}%")
-        i3.metric("Taxa geral (todos os setores)", f"{taxa_geral:.1f}%", delta=f"{taxa_ind - taxa_geral:+.1f} p.p. (indústria vs geral)")
+        i2.metric("Taxa de locomoção industrial", f"{taxa_ind:.1f}%".replace(".", ","))
+        i3.metric("Taxa geral (todos os setores)", f"{taxa_geral:.1f}%".replace(".", ","), delta=f"{taxa_ind - taxa_geral:+.1f}".replace(".", ",") + " p.p. (indústria vs geral)")
 
         fig_ind = px.bar(
             df_ind[df_ind["local_trabalho"].isin(["Município de residência", "Outro município"])],
