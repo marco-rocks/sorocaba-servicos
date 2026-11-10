@@ -1,0 +1,2 @@
+Coloque aqui as fotos da equipe (integrante1.jpg, integrante2.jpg, ...)
+e ajuste os nomes dos arquivos em config.py.

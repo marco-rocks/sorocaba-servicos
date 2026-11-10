@@ -18,13 +18,11 @@ DATA_DIR = BASE_DIR / "data" / "processed"
 
 ANO_MAX = 2025  # teto da série histórica (padronização entre as telas)
 
-st.title("💼 Salários e Ocupações")
+st.title("💼 Salários e Ocupações Formais em Sorocaba")
 st.markdown(
     """
-    Análise das ocupações formais, quantidade de trabalhadores e
-    remuneração média com base nos dados da RAIS.
-
-    Fonte dos dados: CBO
+    Análise aprofundada das ocupações formais, contingente de trabalhadores, 
+    remuneração média, massa salarial e dinâmica de crescimento (TGCA) com base nos microdados da RAIS.
     """
 )
 
@@ -637,10 +635,85 @@ try:
             ),
         }
     )
-    st.caption(
-        "Posição salarial considera apenas ocupações com 30+ trabalhadores. "
-        f"Variação de posição compara {ano_inicial} e {ano_final} (só ocupações presentes nos dois anos)."
-    )
+    st.caption("Fonte dos dados: MTE / RAIS — Microdados por CBO / Ministério do Trabalho e Emprego.")
+
+    # ==========================================================
+    # TGCA - TAXA GEOMÉTRICA DE CRESCIMENTO ANUAL DAS OCUPAÇÕES
+    # ==========================================================
+    st.markdown("---")
+    st.header("📈 TGCA e Crescimento Acumulado por Ocupação")
+    st.markdown(f"""
+    A **Taxa Geométrica de Crescimento Anual (TGCA / CAGR)** mede o ritmo composto de expansão anual de cada profissão 
+    entre o ano inicial ({ano_inicial}) e o ano final ({ano_final}) da série histórica:
+    $$\\text{{TGCA}} = \\left( \\frac{{\\text{{Trabalhadores}}_{{\\text{{{ano_final}}}}}}}{{\\text{{Trabalhadores}}_{{\\text{{{ano_inicial}}}}}}} \\right)^{{\\frac{{1}}{{n}}}} - 1$$
+    onde $n = {ano_final - ano_inicial}$ anos. Para evitar distorções de ocupações muito pequenas, o filtro considera ocupações com base mínima de vínculos formais.
+    """)
+
+    g_ano = df.groupby(["ano", "ocupacao"], as_index=False)["trabalhadores"].sum()
+    df_ini = g_ano[g_ano["ano"] == ano_inicial].rename(columns={"trabalhadores": "trab_ini"})[["ocupacao", "trab_ini"]]
+    df_fim = g_ano[g_ano["ano"] == ano_final].rename(columns={"trabalhadores": "trab_fim"})[["ocupacao", "trab_fim"]]
+    df_tgca = df_ini.merge(df_fim, on="ocupacao")
+
+    base_min = st.slider("Base mínima de vínculos no ano inicial (" + str(ano_inicial) + ")", min_value=100, max_value=2000, value=300, step=100)
+    df_tgca_filtrado = df_tgca[df_tgca["trab_ini"] >= base_min].copy()
+
+    n_periodo = ano_final - ano_inicial
+    if n_periodo > 0 and not df_tgca_filtrado.empty:
+        df_tgca_filtrado["Cresc_Acumulado_%"] = ((df_tgca_filtrado["trab_fim"] - df_tgca_filtrado["trab_ini"]) / df_tgca_filtrado["trab_ini"]) * 100
+        df_tgca_filtrado["TGCA_%"] = ((df_tgca_filtrado["trab_fim"] / df_tgca_filtrado["trab_ini"]) ** (1 / n_periodo) - 1) * 100
+        df_tgca_filtrado["Saldo_Vagas"] = df_tgca_filtrado["trab_fim"] - df_tgca_filtrado["trab_ini"]
+
+        col_tg1, col_tg2 = st.columns(2)
+
+        with col_tg1:
+            st.markdown(f"##### 🚀 Top 10 Ocupações com Maior TGCA ({ano_inicial}–{ano_final})")
+            top_tgca = df_tgca_filtrado.sort_values("TGCA_%", ascending=False).head(10).copy()
+            top_tgca["Rotulo"] = top_tgca["TGCA_%"].apply(lambda v: f"{v:+.1f}% a.a.".replace(".", ","))
+            fig_tgca = px.bar(
+                top_tgca, x="TGCA_%", y="ocupacao", orientation="h", text="Rotulo",
+                title=f"<b>Maiores Taxas Anualizadas de Crescimento (TGCA) — Base ≥ {base_min}</b>",
+                labels={"TGCA_%": "TGCA (% ao ano)", "ocupacao": "Ocupação"},
+                color="TGCA_%", color_continuous_scale="Greens"
+            )
+            fig_tgca.update_traces(textposition="outside")
+            fig_tgca.update_layout(title_font_size=14, height=480, yaxis=dict(autorange="reversed"), coloraxis_showscale=False)
+            st.plotly_chart(fig_tgca, use_container_width=True)
+            st.caption("Fonte: Elaboração própria com base nos microdados da RAIS / MTE.")
+
+        with col_tg2:
+            st.markdown(f"##### 📦 Top 10 Ocupações em Crescimento Acumulado Absoluto (Saldo de Vagas)")
+            top_saldo = df_tgca_filtrado.sort_values("Saldo_Vagas", ascending=False).head(10).copy()
+            top_saldo["Rotulo"] = top_saldo["Saldo_Vagas"].apply(lambda v: f"{int(v):+,}".replace(",", "."))
+            fig_saldo = px.bar(
+                top_saldo, x="Saldo_Vagas", y="ocupacao", orientation="h", text="Rotulo",
+                title=f"<b>Maior Geração Líquida Acumulada de Postos ({ano_inicial} a {ano_final})</b>",
+                labels={"Saldo_Vagas": "Saldo Líquido de Trabalhadores", "ocupacao": "Ocupação"},
+                color="Saldo_Vagas", color_continuous_scale="Blues"
+            )
+            fig_saldo.update_traces(textposition="outside")
+            fig_saldo.update_layout(title_font_size=14, height=480, yaxis=dict(autorange="reversed"), coloraxis_showscale=False)
+            st.plotly_chart(fig_saldo, use_container_width=True)
+            st.caption("Fonte: Elaboração própria com base nos microdados da RAIS / MTE.")
+
+        # Tabela completa de TGCA
+        with st.expander(f"📋 Ver Tabela Completa de TGCA e Variação Acumulada ({ano_inicial}–{ano_final})"):
+            df_tgca_tabela = df_tgca_filtrado.sort_values("TGCA_%", ascending=False).rename(columns={
+                "ocupacao": "Ocupação", "trab_ini": f"Vínculos ({ano_inicial})", "trab_fim": f"Vínculos ({ano_final})",
+                "Saldo_Vagas": "Saldo Líquido", "Cresc_Acumulado_%": "Crescimento Acumulado (%)", "TGCA_%": "TGCA (% a.a.)"
+            })
+            st.dataframe(
+                df_tgca_tabela,
+                use_container_width=True,
+                hide_index=True,
+                column_config={
+                    f"Vínculos ({ano_inicial})": st.column_config.NumberColumn(format="%d"),
+                    f"Vínculos ({ano_final})": st.column_config.NumberColumn(format="%d"),
+                    "Saldo Líquido": st.column_config.NumberColumn(format="%+d"),
+                    "Crescimento Acumulado (%)": st.column_config.NumberColumn(format="%+.2f%%"),
+                    "TGCA (% a.a.)": st.column_config.NumberColumn(format="%+.2f%%"),
+                }
+            )
+            st.caption("Fonte: RAIS / MTE — Cálculo da Taxa Geométrica de Crescimento Anual.")
 
 except FileNotFoundError:
     st.error(

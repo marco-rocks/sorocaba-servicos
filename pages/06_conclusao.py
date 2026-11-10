@@ -161,12 +161,13 @@ fig_sintese = px.bar(
     text="Tendência Observada",
     color="Nível de Relevância",
     color_continuous_scale="Blues",
-    title="Síntese Visual do Impacto Socioeconômico por Área"
+    title="<b>Síntese do Impacto Socioeconômico por Dimensão de Análise</b>"
 )
 fig_sintese.update_traces(textposition="inside")
-fig_sintese.update_layout(height=400, coloraxis_showscale=False)
+fig_sintese.update_layout(title_font_size=15, height=400, coloraxis_showscale=False)
 
 st.plotly_chart(fig_sintese, use_container_width=True)
+st.caption("Fonte: Elaboração consolidada a partir de dados do IBGE (Censos/CEMPRE), RAIS/MTE e Sebrae-SP.")
 
 st.markdown("---")
 

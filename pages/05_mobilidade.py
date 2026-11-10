@@ -448,10 +448,11 @@ try:
         fig_cid = px.bar(
             rank_cid, x="trabalhadores", y="cidade_destino", orientation="h",
             text="trabalhadores", color="trabalhadores", color_continuous_scale="Reds",
-            title="Top 15 cidades de destino"
+            title="<b>Top 15 Cidades de Destino dos Trabalhadores de Sorocaba</b>"
         )
-        fig_cid.update_layout(height=600, yaxis=dict(categoryorder="total ascending"))
+        fig_cid.update_layout(title_font_size=15, height=600, yaxis=dict(categoryorder="total ascending"))
         st.plotly_chart(fig_cid, use_container_width=True)
+        st.caption("Fonte dos dados: SIDRA/IBGE (Censo Demográfico).")
     else:
         st.info(
             "A base atual informa **quantos** trabalhadores saem de Sorocaba, mas não **para onde**. "
