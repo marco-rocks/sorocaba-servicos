@@ -51,7 +51,7 @@ EQUIPE = [
     {
         "nome": "Luiz Machado",
         "funcao": "Pesquisa & Salário/Ocupações",
-        "foto": "luiz.png",
+        "foto": "luiz.jpg",
         "bio": "Análise ocupacional, distribuição salarial e crescimento do mercado de trabalho e do setor de serviços"
     },
 ]
