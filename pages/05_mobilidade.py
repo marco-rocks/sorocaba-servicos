@@ -8,7 +8,7 @@ from pathlib import Path
 # ==========================================================
 
 st.set_page_config(
-    page_title="05 — Mobilidade Regional",
+    page_title="04 — Mobilidade Pendular e Integração Regional",
     page_icon="🚗",
     layout="wide"
 )
@@ -16,7 +16,7 @@ st.set_page_config(
 BASE_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BASE_DIR / "data" / "raw" / "mobilidade"
 
-st.title("🚗 Mobilidade Regional")
+st.title("🚗 Mobilidade Pendular e Integração Regional")
 st.markdown(
     """
     Análise da mobilidade dos trabalhadores residentes em Sorocaba,

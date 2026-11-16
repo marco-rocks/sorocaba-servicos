@@ -6,7 +6,7 @@ from pathlib import Path
 
 # Configuração da página
 st.set_page_config(
-    page_title="03 — Setor de Serviços", 
+    page_title="05 — Setor de Serviços e Empreendedorismo (MEI)", 
     page_icon="🛎️", 
     layout="wide"
 )
@@ -18,7 +18,7 @@ MUNICIPIO = "Sorocaba"
 ANO_INICIO_NEGOCIOS = 2006  
 ANO_MAX = 2025  
 
-st.title("🛎️ Estrutura e Dinâmica do Setor de Serviços")
+st.title("🛎️ Setor de Serviços e Empreendedorismo (MEI)")
 st.markdown("Explanação conceitual, distribuição setorial, evolução empresarial do MEI e mapeamento territorial dos polos de comércio e serviços em Sorocaba.")
 
 def encurtar(txt, limite=38):

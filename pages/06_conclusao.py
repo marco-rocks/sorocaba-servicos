@@ -5,7 +5,7 @@ from pathlib import Path
 
 # Configuração da página
 st.set_page_config(
-    page_title="06 — Conclusão",
+    page_title="06 — Síntese Estratégica e Diretrizes de Políticas Públicas",
     page_icon="🎯",
     layout="wide"
 )
@@ -15,7 +15,7 @@ PROCESSED_DIR = BASE_DIR / "data" / "processed"
 RAW_CONTEXTO_DIR = BASE_DIR / "data" / "raw" / "contexto"
 MOBILIDADE_DIR = BASE_DIR / "data" / "raw" / "mobilidade"
 
-st.title("🎯 Síntese e Conclusões Estratégicas")
+st.title("🎯 Síntese Estratégica e Diretrizes de Políticas Públicas")
 st.subheader("O papel do Setor de Serviços no desenvolvimento socioeconômico de Sorocaba-SP")
 
 st.markdown("""
@@ -137,20 +137,20 @@ st.header("📊 Matriz Síntese dos Módulos da Aplicação")
 
 dados_sintese = pd.DataFrame({
     "Dimensão": [
-        "01. Demografia & PIB",
-        "02. Mercado de Trabalho",
-        "03. Setor de Serviços",
-        "04. Salários & Ocupações",
-        "05. Mobilidade Urbana"
+        "01. Contexto Macroeconômico e Demografia",
+        "02. Dinâmica do Emprego Formal e Empresas",
+        "03. Estrutura Ocupacional, Salários e TGCA",
+        "04. Mobilidade Pendular e Integração Regional",
+        "05. Setor de Serviços e Empreendedorismo (MEI)"
     ],
     "Tendência Observada": [
         f"População atingiu {pop_txt} ({pop_cresc_txt} vs 2010) e PIB de {pib_bi_txt}",
         f"Pessoal ocupado cresceu {cresc_pes_txt} e empresas {cresc_emp_txt}",
-        "Dominância de MEI/ME e diversificação em subsetores de saúde, comércio e tecnologia",
         "Elevada absorção em cargos operacionais; topo salarial em gestão e serviços técnicos",
-        f"Forte retenção local ({pct_mob_txt}) e centralidade regional na RMS"
+        f"Forte retenção local ({pct_mob_txt}) e centralidade regional na RMS",
+        "Dominância de MEI/ME e diversificação em subsetores de saúde, comércio e tecnologia"
     ],
-    "Nível de Relevância": [85, 90, 95, 88, 80]
+    "Nível de Relevância": [85, 90, 88, 80, 95]
 })
 
 fig_sintese = px.bar(

@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Capa — Mercado do Trabalho e Serviços em Sorocaba",
+    page_title="Capa — Mercado de Trabalho e Empreendedorismo Sorocabano",
     page_icon="🏠",
     layout="wide"
 )
@@ -45,7 +45,7 @@ st.markdown("""
 </style>
 
 <div class="hero">
-  <h1>MERCADO DO TRABALHO EM SOROCABA E EXPLANAÇÃO SOBRE O SETOR DE SERVIÇOS</h1>
+  <h1>Mercado de Trabalho e Empreendedorismo Sorocabano: O papel dos serviços e a mobilidade laboral intermunicipal</h1>
   <h3>Panorama Estrutural, Empreendedorismo e Dinâmica do Mercado de Trabalho e do Setor Terciário</h3>
   <p><b>Análise Econômica Aplicada e Ciência de Dados</b></p>
   <p>Região Metropolitana de Sorocaba (RMS) · Estado de São Paulo</p>

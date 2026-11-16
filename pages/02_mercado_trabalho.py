@@ -5,7 +5,7 @@ from pathlib import Path
 
 # Configuração da página
 st.set_page_config(
-    page_title="02 — Mercado de Trabalho", 
+    page_title="02 — Dinâmica do Emprego Formal e Empresas", 
     page_icon="💼", 
     layout="wide"
 )
@@ -16,7 +16,7 @@ PROCESSED_DIR = BASE_DIR / "data" / "processed"
 
 ANO_MAX = 2025  # teto da série histórica
 
-st.title("💼 Estrutura do Mercado de Trabalho Formal")
+st.title("💼 Dinâmica do Emprego Formal e Empresas")
 st.markdown("Análise da evolução temporal do número de empresas, postos de trabalho, massa salarial em Sorocaba e comparação regional com municípios vizinhos do Estado de São Paulo.")
 
 @st.cache_data

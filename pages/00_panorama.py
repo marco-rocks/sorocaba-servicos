@@ -66,7 +66,7 @@ def carregar_metricas():
 
     return metricas
 
-st.title("MERCADO DO TRABALHO EM SOROCABA E EXPLANAÇÃO SOBRE O SETOR DE SERVIÇOS")
+st.title("Mercado de Trabalho e Empreendedorismo Sorocabano: O papel dos serviços e a mobilidade laboral intermunicipal")
 st.subheader("Panorama estrutural, dinâmica do emprego, renda e serviços na Região Metropolitana")
 st.markdown("---")
 

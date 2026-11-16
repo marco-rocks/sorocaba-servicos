@@ -8,8 +8,8 @@ from pathlib import Path
 # ==========================================================
 
 st.set_page_config(
-    page_title="04 — Salários e Ocupações",
-    page_icon="💼",
+    page_title="03 — Estrutura Ocupacional, Salários e TGCA",
+    page_icon="💰",
     layout="wide"
 )
 
@@ -18,7 +18,7 @@ DATA_DIR = BASE_DIR / "data" / "processed"
 
 ANO_MAX = 2025  # teto da série histórica (padronização entre as telas)
 
-st.title("💼 Salários e Ocupações Formais em Sorocaba")
+st.title("💰 Estrutura Ocupacional, Salários e TGCA em Sorocaba")
 st.markdown(
     """
     Análise aprofundada das ocupações formais, contingente de trabalhadores, 

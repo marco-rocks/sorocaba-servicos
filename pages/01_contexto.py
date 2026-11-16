@@ -3,13 +3,13 @@ import pandas as pd
 import plotly.express as px
 from pathlib import Path
 
-st.set_page_config(page_title="01 — Contexto de Sorocaba", page_icon="🏙️", layout="wide")
+st.set_page_config(page_title="01 — Contexto Macroeconômico e Demografia", page_icon="🏙️", layout="wide")
 
 # Caminhos dos dados processados
 BASE_DIR = Path(__file__).resolve().parents[1]
 PROCESSED_DIR = BASE_DIR / "data" / "processed"
 
-st.title("🏙️ Contexto Econômico e Demográfico de Sorocaba")
+st.title("🏙️ Contexto Macroeconômico e Demografia de Sorocaba")
 st.markdown("Análise da evolução do Produto Interno Bruto (PIB Real a **preços constantes em 2023**) e da dinâmica populacional com ênfase na transição etária.")
 
 # --- CARREGAMENTO DOS DADOS ---
