@@ -15,6 +15,7 @@ st.set_page_config(
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BASE_DIR / "data" / "raw" / "mobilidade"
+ASSETS_DIR = BASE_DIR / "assets"
 
 st.title("🚗 Mobilidade Pendular e Integração Regional")
 st.markdown(
@@ -26,6 +27,10 @@ st.markdown(
     Fonte dos dados: SIDRA/IBGE
     """
 )
+
+img_raposo = ASSETS_DIR / "sorocaba_raposo_tavares.jpg"
+if img_raposo.exists():
+    st.image(str(img_raposo), caption="Eixo Rodoviário Raposo Tavares (SP-270) em Sorocaba — Principal vetor de conexão pendular e integração intermunicipal na Região Metropolitana", use_container_width=True)
 
 # ==========================================================
 # CARREGAMENTO

@@ -8,9 +8,14 @@ st.set_page_config(page_title="01 — Contexto Macroeconômico e Demografia", pa
 # Caminhos dos dados processados
 BASE_DIR = Path(__file__).resolve().parents[1]
 PROCESSED_DIR = BASE_DIR / "data" / "processed"
+ASSETS_DIR = BASE_DIR / "assets"
 
 st.title("🏙️ Contexto Macroeconômico e Demografia de Sorocaba")
 st.markdown("Análise da evolução do Produto Interno Bruto (PIB Real a **preços constantes em 2023**) e da dinâmica populacional com ênfase na transição etária.")
+
+img_aguas = ASSETS_DIR / "sorocaba_parque_das_aguas.jpg"
+if img_aguas.exists():
+    st.image(str(img_aguas), caption="Parque das Águas de Sorocaba — Marco de lazer, urbanização moderna e qualidade de vida no município", use_container_width=True)
 
 # --- CARREGAMENTO DOS DADOS ---
 @st.cache_data

@@ -5,6 +5,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parents[1]
 PROCESSED_DIR = BASE_DIR / "data" / "processed"
 RAW_CONTEXTO_DIR = BASE_DIR / "data" / "raw" / "contexto"
+ASSETS_DIR = BASE_DIR / "assets"
 
 @st.cache_data
 def carregar_metricas():
@@ -85,11 +86,17 @@ tab1, tab2, tab3 = st.tabs(["🏛️ Origem & Indicadores", "⏳ Linha do Tempo 
 
 with tab1:
     st.subheader("Origem, Fundação e Posição Regional")
-    st.markdown("""
-    * **Origem e Fundação:** Povoada originalmente pelos índios Tupiniquins e cortada pelo histórico Caminho do Peabiru, a região era rota para bandeirantes e missionários. Fundada oficialmente em 1654 pelo capitão bandeirante Baltazar Fernandes, seu nome vem do Tupi-Guarani ("terra rasgada"). Em 1661, tornou-se Vila com 30 famílias.
-    * **Relevância Econômica:** Sede da Região Metropolitana de Sorocaba (RMS) composta por 27 municípios e mais de 2,1 milhões de habitantes, atuando como polo concentrador de comércio, saúde, tecnologia e serviços especializados.
-    * **Localização Estratégica:** A 87 km da capital paulista, servida pelos eixos rodoviários Castello Branco e Raposo Tavares. Abriga o Parque Tecnológico de Sorocaba (PTS), indústrias automotivas, aeronáuticas e um ecossistema pujante de startups e logística.
-    """)
+    c_txt, c_flag = st.columns([2.2, 1])
+    with c_txt:
+        st.markdown("""
+        * **Origem e Fundação:** Povoada originalmente pelos povos originários Tupiniquins e cortada pelo histórico Caminho do Peabiru, a região era rota para bandeirantes e missionários. Fundada oficialmente em 1654 pelo capitão bandeirante Baltazar Fernandes, seu nome tem raiz no Tupi-Guarani (*Soroc-aba*, "terra rasgada"). Em 1661, tornou-se Vila com 30 famílias.
+        * **Relevância Econômica:** Sede da Região Metropolitana de Sorocaba (RMS) composta por 27 municípios e mais de 2,1 milhões de habitantes, atuando como polo concentrador de comércio, saúde, tecnologia e serviços especializados.
+        * **Localização Estratégica:** A 87 km da capital paulista, servida pelos eixos rodoviários Castello Branco e Raposo Tavares. Abriga o Parque Tecnológico de Sorocaba (PTS), indústrias automotivas, aeronáuticas e um ecossistema pujante de startups e logística.
+        """)
+    with c_flag:
+        img_bandeira = ASSETS_DIR / "sorocaba_bandeira.jpg"
+        if img_bandeira.exists():
+            st.image(str(img_bandeira), caption="Bandeira Oficial do Município de Sorocaba (SP)", use_container_width=True)
 
 with tab2:
     st.subheader("Evolução Histórica da Economia Sorocabana")
@@ -101,6 +108,9 @@ with tab2:
     * **1875 — Conexão Férrea:** Inauguração da Estrada de Ferro Sorocabana (EFS) por iniciativa do empresário Luiz Matheus Maylasky para escoar a produção regional.
     * **Fim do Séc. XIX e Séc. XX — A "Manchester Paulista":** Instalação de grandes complexos têxteis (Nossa Senhora da Ponte, Santa Rosália e Votorantim), consolidando a cidade como um polo operário e industrial de primeira grandeza.
     """)
+    img_efs = ASSETS_DIR / "sorocaba_estacao_ferroviaria.jpg"
+    if img_efs.exists():
+        st.image(str(img_efs), caption="Prédio Histórico da Estação Ferroviária de Sorocaba (EFS, inaug. 1875) — Marco da integração logística e industrial", use_container_width=True)
 
 with tab3:
     st.subheader("Gestão de Emprego, Qualificação, Empreendedorismo e Desenvolvimento")
@@ -114,3 +124,6 @@ with tab3:
         * **Casa do Trabalhador (SINE Municipal / PAT):** Centralizada no Centro (Rua Cel. Cavalheiros, 353), atua no encaminhamento a vagas, emissão de CTPS digital e seguro-desemprego.
         * **Van do Emprego e Qualificação:** Unidade móvel que descentraliza cadastros e processos seletivos pelas diferentes zonas e feiras da cidade.
     """)
+    img_paco = ASSETS_DIR / "sorocaba_paco_municipal.jpg"
+    if img_paco.exists():
+        st.image(str(img_paco), caption="Palácio dos Tropeiros (Paço Municipal de Sorocaba) — Centro cívico e de gestão das políticas públicas e de desenvolvimento econômico", use_container_width=True)
