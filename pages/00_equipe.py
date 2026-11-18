@@ -22,7 +22,7 @@ EQUIPE = [
         "nome": "Marco Túlio",
         "cargo": "Pesquisador (Fatec Votorantim)",
         "funcao": "Engenharia de Dados",
-        "foto": "marco.png",
+        "foto": "marco.jpg",
         "bio": "Pesquisa em análise quantitativa e inteligência de dados (mercado financeiro e criptoativos). Responsável pela arquitetura de dados, integração de microdados oficiais (RAIS/IBGE) e desenvolvimento do dashboard."
     },
     {
