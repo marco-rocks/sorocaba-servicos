@@ -370,25 +370,6 @@ try:
 
     st.caption("Fonte dos dados: SIDRA/IBGE")
 
-    st.markdown("---")
-
-    # ==========================================================
-    # TABELA
-    # ==========================================================
-
-    st.subheader("📋 Base Completa")
-
-    st.dataframe(
-        df.sort_values(
-            "trabalhadores",
-            ascending=False
-        ),
-        use_container_width=True,
-        hide_index=True
-    )
-
-    st.caption("Fonte dos dados: SIDRA/IBGE")
-
     # ==========================================================
     # LOCOMOÇÃO INDUSTRIAL
     # ==========================================================
@@ -464,6 +445,24 @@ try:
             "Para ver o ranking de cidades, adicione `deslocamento_cidades.csv` em `data/raw/mobilidade/` "
             "com as colunas `cidade_destino` e `trabalhadores` (opcional: `atividade`)."
         )
+
+    # ==========================================================
+    # TABELA (BASE COMPLETA)
+    # ==========================================================
+
+    st.markdown("---")
+    st.subheader("📋 Base Completa de Dados")
+
+    st.dataframe(
+        df.sort_values(
+            "trabalhadores",
+            ascending=False
+        ),
+        use_container_width=True,
+        hide_index=True
+    )
+
+    st.caption("Fonte dos dados: SIDRA/IBGE")
 
 except FileNotFoundError:
     st.error(
