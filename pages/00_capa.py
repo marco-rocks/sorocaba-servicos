@@ -156,11 +156,15 @@ st.markdown("---")
 st.subheader("📸 Sorocaba em Foco")
 col_img1, col_img2 = st.columns(2)
 with col_img1:
-    img_rio = ASSETS_DIR / "sorocaba_ciclovia_rio.jpg"
+    img_rio = ASSETS_DIR / "sorocaba_ciclovia_rio_thumb.jpg"
+    if not img_rio.exists():
+        img_rio = ASSETS_DIR / "sorocaba_ciclovia_rio.jpg"
     if img_rio.exists():
         st.image(str(img_rio), caption="Margens do Rio Sorocaba e malha cicloviária urbana integrada", use_container_width=True)
 
 with col_img2:
-    img_bot = ASSETS_DIR / "sorocaba_jardim_botanico.jpg"
+    img_bot = ASSETS_DIR / "sorocaba_jardim_botanico_thumb.jpg"
+    if not img_bot.exists():
+        img_bot = ASSETS_DIR / "sorocaba_jardim_botanico.jpg"
     if img_bot.exists():
         st.image(str(img_bot), caption="Palacete de Cristal no Jardim Botânico Irmãos Villas-Bôas", use_container_width=True)
